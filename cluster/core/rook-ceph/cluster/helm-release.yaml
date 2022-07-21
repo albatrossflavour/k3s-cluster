@@ -114,11 +114,11 @@ spec:
           requests:
             cpu: "500m"
             memory: "100Mi"
-    cephBlockPoolsVolumeSnapshotClass:
-      enabled: true
-      name: csi-rbdplugin-snapclass
-      annotations:
-        velero.io/csi-volumesnapshot-class: "true"
+#   cephBlockPoolsVolumeSnapshotClass:
+#     enabled: true
+#     name: csi-rbdplugin-snapclass
+#     annotations:
+#       velero.io/csi-volumesnapshot-class: "true"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
