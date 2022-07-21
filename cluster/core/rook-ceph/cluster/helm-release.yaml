@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: rook-ceph-cluster
-      version: v1.9.7
+      version: 1.9.7
       sourceRef:
         kind: HelmRepository
         name: rook-ceph-charts
@@ -31,9 +31,9 @@ spec:
     ingress:
       dashboard:
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          external-dns.alpha.kubernetes.io/target: "rook.${SECRET_DOMAIN}"
-          external-dns/is-public: "true"
+          - cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          - external-dns.alpha.kubernetes.io/target: "rook.${SECRET_DOMAIN}"
+          - external-dns/is-public: "true"
         ingressClassName: "nginx"
         host:
           name: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
