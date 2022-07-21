@@ -30,9 +30,13 @@ spec:
       createPrometheusRules: true
     ingress:
       dashboard:
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns.alpha.kubernetes.io/target: "rook.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
         ingressClassName: "nginx"
         host:
-          name: &host "rook.${SECRET_PUBLIC_DOMAIN}"
+          name: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
           path: "/"
         tls:
           - hosts:
