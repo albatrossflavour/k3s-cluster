@@ -70,7 +70,7 @@ spec:
                 path: mon-endpoints
         - name: backups
           nfs:
-            server: "expanse.${SECRET_PRIVATE_DOMAIN}"
+            server: "expanse.albatrossflavor.com"
             path: /tycho/Apps/External/Backups
         - name: direct-mount-backup-script
           projected:
