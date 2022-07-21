@@ -13,3 +13,4 @@ resources:
   - metrics-server.yaml
   - stakater.yaml
   - weaveworks-kured.yaml
+  - node-red.yaml
