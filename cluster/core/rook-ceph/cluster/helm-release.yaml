@@ -32,7 +32,7 @@ spec:
       dashboard:
         ingressClassName: "nginx"
         host:
-          name: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          name: &host "rook.${SECRET_DOMAIN}"
           path: "/"
         tls:
           - hosts:
