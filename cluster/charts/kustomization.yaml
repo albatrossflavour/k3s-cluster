@@ -14,3 +14,4 @@ resources:
   - stakater.yaml
   - weaveworks-kured.yaml
   - rook-ceph.yaml
+  - mojo2600.yaml
