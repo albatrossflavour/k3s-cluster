@@ -31,12 +31,19 @@ spec:
     ingress:
       dashboard:
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "video-input-antenna"
         host:
           name: &host "rook.${SECRET_DOMAIN}"
           path: "/"
         tls:
           - hosts:
               - *host
+            secretName: "root-dashboard-tls"
     configOverride: |
       [global]
       bdev_enable_discard = true

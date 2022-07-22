@@ -5,4 +5,4 @@ resources:
   - namespace.yaml
   - echo-server
   - hajimari
-  - node-red
+  #- node-red
