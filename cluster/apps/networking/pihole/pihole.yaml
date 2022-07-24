@@ -13,28 +13,10 @@ spec:
       version: 2.9.0
       sourceRef:
         kind: HelmRepository
-        name: mojo2600-charts
+        name: mojo2600
         namespace: flux-system
       interval: 5m
   values:
-    monitoring:
-      podMonitor:
-        enabled: true
-      sidecar:
-        enabled: true
-        image:
-          pullPolicy: "IfNotPresent"
-          repository: "ekofr/pihole-exporter"
-          tag: "v0.3.0"
-          port: 9617
-        resources:
-          limits:
-            memory: "128Mi"
-    doh:
-      enabled: true
-      name: "cloudflared"
-      repository: "crazymax/cloudflared"
-      tag: "2021.5.7"
     serviceDhcp:
       enabled: false
     serviceDns:
@@ -50,60 +32,12 @@ spec:
       annotations:
         metallb.universe.tf/allow-shared-ip: pihole-svc
     virtualHost: "pihole.${SECRET_DOMAIN}"
-    ingress:
-      enabled: true
-      ingressClassName: nginx-internal
-      annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
-        # nginx.ingress.kubernetes.io/auth-signin: "https://auth.${SECRET_DOMAIN}"
-        # nginx.ingress.kubernetes.io/auth-url: "https://auth.${SECRET_DOMAIN}/api/verify"
-        hajimari.io/enable: "true"
-        hajimari.io/icon: "dns"
-        hajimari.io/instance: "internal"
-        hajimari.io/group: "Cluster Ops"
-      path: /
-      hosts:
-        - "pihole.${SECRET_DOMAIN}"
-        #tls:
-          #- secretName: "pihole-tls"
-          #hosts:
-            #- "pihole.${SECRET_DOMAIN}"
     persistentVolumeClaim:
       enabled: false
-#   tolerations:
-#     - key: "arm"
-#       operator: "Exists"
     replicaCount: 1
-#    topologySpreadConstraints:
-#      - maxSkew: 1
-#        topologyKey: kubernetes.io/arch
-#        whenUnsatisfiable: DoNotSchedule
-#        labelSelector:
-#          matchLabels:
-#            release: pihole
-#      - maxSkew: 1
-#        topologyKey: kubernetes.io/hostname
-#        whenUnsatisfiable: DoNotSchedule
-#        labelSelector:
-#          matchLabels:
-#            release: pihole
-# adminPassword: ${SECRET_PIHOLE_ADMIN_PASSWORD}
-
-    dnsHostPort:
-      enabled: false
-      port: 53
-
     adminPassword: "admin"
     DNS1: "8.8.8.8"
     DNS2: "8.8.4.4"
-
-    dnsmasq:
-      upstreamServers: []
-      customDnsEntries: []
-      additionalHostsEntries: []
-      staticDhcpEntries: []
-      customSettings: []
-      customCnameEntries: []
 
     adlists:
       - https://hosts-file.net/grm.txt
