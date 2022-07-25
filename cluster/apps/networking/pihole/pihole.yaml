@@ -75,3 +75,29 @@ spec:
       - clients4.google.com
 
     blacklist: {}
+    doh:
+      enabled: true
+      name: "cloudflared"
+      repository: "crazymax/cloudflared"
+      tag: "2021.5.7"
+    serviceDhcp:
+      enabled: false
+    monitoring:
+      podMonitor:
+        enabled: false
+      sidecar:
+        enabled: false
+        image:
+          pullPolicy: "IfNotPresent"
+          repository: "ekofr/pihole-exporter"
+          tag: "v0.3.0"
+          port: 9617
+        resources:
+          limits:
+            memory: "128Mi"
+    podDnsConfig:
+      enabled: true
+      policy: "None"
+      nameservers:
+        - 127.0.0.1
+        - 8.8.8.8
