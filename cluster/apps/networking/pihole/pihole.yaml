@@ -8,7 +8,6 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://mojo2600.github.io/pihole-kubernetes
       chart: pihole
       version: 2.9.0
       sourceRef:
@@ -16,127 +15,27 @@ spec:
         name: mojo2600
         namespace: flux-system
       interval: 5m
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
   values:
-    monitoring:
-      podMonitor:
-        enabled: false
-      sidecar:
-        enabled: false
-        image:
-          pullPolicy: "IfNotPresent"
-          repository: "ekofr/pihole-exporter"
-          tag: "v0.3.0"
-          port: 9617
-        resources:
-          limits:
-            memory: "128Mi"
-    doh:
-      enabled: true
-      name: "cloudflared"
-      repository: "crazymax/cloudflared"
-      tag: "2021.5.7"
-    serviceDhcp:
-      enabled: false
-    dns-tcp:
-      enabled: true
-      type: LoadBalancer
-      port: 53
-      loadBalancerIP: 192.168.1.250
+    image:
+      repository: pihole/pihole
+      tag: "2022.07"
+    serviceWeb:
+      loadBalancerIP: "192.168.2.250"
       annotations:
         metallb.universe.tf/allow-shared-ip: pihole-svc
-      externalTrafficPolicy: Local
-      #serviceWeb:
-    dns-udp:
-      enabled: true
       type: LoadBalancer
-      port: 53
-      loadBalancerIP: 192.168.1.250
+    serviceDns:
+      loadBalancerIP: "192.168.2.250"
       annotations:
         metallb.universe.tf/allow-shared-ip: pihole-svc
-      externalTrafficPolicy: Local
-      #serviceWeb:
-        #type: LoadBalancer
-        #loadBalancerIP: 192.168.1.250
-        #annotations:
-          #metallb.universe.tf/allow-shared-ip: pihole-svc
-    virtualHost: "pihole.${SECRET_DOMAIN}"
-    ingress:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
-        # nginx.ingress.kubernetes.io/auth-signin: "https://auth.${SECRET_DOMAIN}"
-        # nginx.ingress.kubernetes.io/auth-url: "https://auth.${SECRET_DOMAIN}/api/verify"
-        hajimari.io/enable: "true"
-        hajimari.io/icon: "dns"
-        hajimari.io/instance: "internal"
-        hajimari.io/group: "Cluster Ops"
-      path: /
-      hosts:
-        - &host "pihole.${SECRET_DOMAIN}"
-      tls:
-        - secretName: "pihole-tls"
-          hosts:
-            - *host
+      type: LoadBalancer
     persistentVolumeClaim:
       enabled: false
-#   tolerations:
-#     - key: "arm"
-#       operator: "Exists"
-    replicaCount: 1
-    topologySpreadConstraints:
-      - maxSkew: 1
-        topologyKey: kubernetes.io/arch
-        whenUnsatisfiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            release: pihole
-      - maxSkew: 1
-        topologyKey: kubernetes.io/hostname
-        whenUnsatisfiable: DoNotSchedule
-        labelSelector:
-          matchLabels:
-            release: pihole
-            # adminPassword: ${SECRET_PIHOLE_ADMIN_PASSWORD}
-
-    dnsHostPort:
-      enabled: false
-      port: 53
-
     adminPassword: "admin"
-    DNS1: "8.8.8.8"
-    DNS2: "8.8.4.4"
-
-    dnsmasq:
-      upstreamServers: []
-      customDnsEntries: []
-      additionalHostsEntries: []
-      staticDhcpEntries: []
-      customSettings: []
-      customCnameEntries: []
-
-    adlists:
-      - https://hosts-file.net/grm.txt
-      - https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
-      - https://adaway.org/hosts.txt
-      - https://v.firebog.net/hosts/Easyprivacy.txt
-      - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
-      - https://raw.githubusercontent.com/mhhakim/pihole-blocklist/master/porn.txt
-
-    whitelist:
-      - clients4.google.com
-
-    blacklist: {}
-    regex: {}
-    ftl: {}
-    webHttp: "80"
-    webHttps: "443"
-    hostname: ""
-    hostNetwork: "false"
-    privileged: "false"
-    podDnsConfig:
-      enabled: true
-      policy: "None"
-      nameservers:
-        - 127.0.0.1
-        - 8.8.8.8
