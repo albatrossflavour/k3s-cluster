@@ -37,7 +37,8 @@ spec:
         metallb.universe.tf/allow-shared-ip: pihole-svc
       type: LoadBalancer
     persistentVolumeClaim:
-      enabled: false
+      enabled: true
+      existingClaim: pihole-data
     adminPassword: "admin"
     ingress:
       enabled: true

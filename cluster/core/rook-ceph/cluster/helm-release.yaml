@@ -37,6 +37,8 @@ spec:
           external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/icon: "video-input-antenna"
+          hajimari.io/instance: "internal"
+          hajimari.io/group: "Cluster Ops"
         host:
           name: &host "rook.${SECRET_DOMAIN}"
           path: "/"
