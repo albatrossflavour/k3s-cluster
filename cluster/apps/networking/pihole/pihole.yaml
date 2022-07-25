@@ -37,6 +37,15 @@ spec:
       tag: "2021.5.7"
     serviceDhcp:
       enabled: false
+    dns-tcp:
+      enabled: true
+      type: LoadBalancer
+      port: 53
+      loadBalancerIP: 192.168.1.250
+      annotations:
+        metallb.universe.tf/allow-shared-ip: pihole-svc
+      externalTrafficPolicy: Local
+      #serviceWeb:
     dns-udp:
       enabled: true
       type: LoadBalancer
