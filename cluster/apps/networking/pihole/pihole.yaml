@@ -19,9 +19,9 @@ spec:
   values:
     monitoring:
       podMonitor:
-        enabled: true
+        enabled: false
       sidecar:
-        enabled: true
+        enabled: false
         image:
           pullPolicy: "IfNotPresent"
           repository: "ekofr/pihole-exporter"
