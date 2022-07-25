@@ -124,6 +124,7 @@ spec:
       data:
         enabled: true
         existingClaim: hajimari-config
+        staoageClassName: ceph-block
     podAnnotations:
       configmap.reloader.stakater.com/reload: "hajimari-settings"
     resources:
