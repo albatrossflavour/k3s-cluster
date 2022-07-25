@@ -32,10 +32,10 @@ spec:
       TZ: "${TIMEZONE}"
       RADARR__INSTANCE_NAME: Radarr
       RADARR__PORT: &port 80
-      RADARR__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_PUBLIC_DOMAIN}"
+      RADARR__APPLICATION_URL: "https://{{ .Release.Name }}.${SECRET_DOMAIN}"
       RADARR__LOG_LEVEL: info
       PUSHOVER_DEBUG: "false"
-      PUSHOVER_APP_URL: &host "{{ .Release.Name }}.${SECRET_PUBLIC_DOMAIN}"
+      PUSHOVER_APP_URL: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
     envFrom:
       - secretRef:
           name: *app
