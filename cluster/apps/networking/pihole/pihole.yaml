@@ -39,3 +39,39 @@ spec:
     persistentVolumeClaim:
       enabled: false
     adminPassword: "admin"
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "dns"
+        hajimari.io/instance: "internal"
+        hajimari.io/group: "Cluster Ops"
+      path: /
+      hosts:
+        - &host "pihole.${SECRET_DOMAIN}"
+      tls:
+        - secretName: "pihole-tls"
+          hosts:
+            - *host
+    dnsmasq:
+      upstreamServers: []
+      customDnsEntries: []
+      additionalHostsEntries: []
+      staticDhcpEntries: []
+      customSettings: []
+      customCnameEntries: []
+
+    adlists:
+      - https://hosts-file.net/grm.txt
+      - https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
+      - https://adaway.org/hosts.txt
+      - https://v.firebog.net/hosts/Easyprivacy.txt
+      - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
+      - https://raw.githubusercontent.com/mhhakim/pihole-blocklist/master/porn.txt
+
+    whitelist:
+      - clients4.google.com
+
+    blacklist: {}
