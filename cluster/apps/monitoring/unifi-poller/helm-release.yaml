@@ -12,7 +12,7 @@ spec:
       version: 11.0.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: k8s-at-home
         namespace: flux-system
       interval: 15m
   install:
@@ -29,10 +29,10 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       UP_UNIFI_DEFAULT_ROLE: "homelab-controller"
-      UP_UNIFI_DEFAULT_URL: "https://unifi.${SECRET_PRIVATE_DOMAIN}"
+      UP_UNIFI_DEFAULT_URL: "https://192.168.1.1"
       UP_UNIFI_DEFAULT_VERIFY_SSL: false
-      UP_UNIFI_DEFAULT_USER: "unifipoller"
-      UP_UNIFI_DEFAULT_PASS: "unifipoller"
+      UP_UNIFI_DEFAULT_USER: "admin"
+      UP_UNIFI_DEFAULT_PASS: "H4l18ut666"
       UP_UNIFI_DEFAULT_SAVE_SITES: true
       UP_UNIFI_DEFAULT_SAVE_DPI: false
       UP_INFLUXDB_DISABLE: true

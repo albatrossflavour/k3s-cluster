@@ -7,4 +7,4 @@ resources:
   - blackbox-exporter
   - grafana
   - kube-prometheus-stack
-  # - unifi-poller
+  - unifi-poller
