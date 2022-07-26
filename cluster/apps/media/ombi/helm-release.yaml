@@ -30,11 +30,6 @@ spec:
       tag: version-v4.0.1430
     env:
       TZ: "${TIMEZONE}"
-    service:
-      main:
-        ports:
-          http:
-            port: &port 3579
     ingress:
       main:
         enabled: true
