@@ -180,11 +180,11 @@ spec:
           - hosts:
               - *host
       thanosService:
-        enabled: false
+        enabled: true
       thanosServiceMonitor:
-        enabled: false
+        enabled: true
       thanosIngress:
-        enabled: false
+        enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
         annotations:
