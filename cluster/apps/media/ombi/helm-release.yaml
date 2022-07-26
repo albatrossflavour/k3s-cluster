@@ -53,11 +53,8 @@ spec:
           - hosts:
               - *host
     podSecurityContext:
-      runAsUser: 1001
-      runAsGroup: 1001
-      fsGroup: 1001
-      fsGroupChangePolicy: "OnRootMismatch"
-      supplementalGroups:
+      runAsUser: 1000
+      runAsGroup: 1000
         - 100
     persistence:
       config:
