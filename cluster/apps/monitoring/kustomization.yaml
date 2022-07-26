@@ -5,6 +5,6 @@ namespace: monitoring
 resources:
   - namespace.yaml
   - blackbox-exporter
-  # - grafana
+  - grafana
   # - kube-prometheus-stack
   # - unifi-poller

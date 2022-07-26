@@ -16,3 +16,4 @@ resources:
   - rook-ceph.yaml
   - mojo2600.yaml
   - prometheus-community-charts.yaml
+  - grafana-charts.yaml

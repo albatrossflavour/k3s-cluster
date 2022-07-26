@@ -35,7 +35,7 @@ spec:
       existingSecret: grafana-admin-creds
     grafana.ini:
       server:
-        root_url: "https://grafana.${SECRET_PUBLIC_DOMAIN}"
+        root_url: "https://grafana.${SECRET_DOMAIN}"
       paths:
         data: /var/lib/grafana/data
         logs: /var/log/grafana
@@ -82,16 +82,6 @@ spec:
     dashboards:
       default:
         # Ref: https://grafana.com/grafana/dashboards/7845
-        zfs:
-          gnetId: 7845
-          revision: 4
-          datasource: Prometheus
-        # Ref: https://grafana.com/grafana/dashboards/13502
-        minio:
-          gnetId: 13502
-          revision: 10
-          datasource: Prometheus
-        # Ref: https://grafana.com/grafana/dashboards/11315
         unifi-client-insights:
           gnetId: 11315
           revision: 8
@@ -139,7 +129,7 @@ spec:
         nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
         nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
       hosts:
-        - &host "grafana.${SECRET_PUBLIC_DOMAIN}"
+        - &host "grafana.${SECRET_DOMAIN}"
       tls:
         - hosts:
             - *host
