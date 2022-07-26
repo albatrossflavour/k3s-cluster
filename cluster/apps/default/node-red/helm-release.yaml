@@ -53,12 +53,12 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: node-red-config-v1
+        existingClaim: node-red-config
         mountPath: "/data"
 
-    resources:
-      requests:
-        cpu: 10m
-        memory: 100Mi
-      limits:
-        memory: 500Mi
+#   resources:
+#     requests:
+#       cpu: 10m
+#       memory: 100Mi
+#     limits:
+#       memory: 500Mi
