@@ -53,6 +53,8 @@ spec:
           nginx.ingress.kubernetes.io/auth-secret: basic-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/icon: "weather-sunset"
         hosts:
@@ -63,6 +65,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: "radarr-tls"
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
