@@ -96,7 +96,7 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         hosts:
-          - &host "alert-manager.${SECRET_PUBLIC_DOMAIN}"
+          - &host "alert-manager.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
@@ -144,27 +144,27 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 192.168.2.50
+        - 192.168.2.51
+        - 192.168.2.52
     kubeScheduler:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 192.168.2.50
+        - 192.168.2.51
+        - 192.168.2.52
     kubeProxy:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 192.168.2.50
+        - 192.168.2.51
+        - 192.168.2.52
     kubeEtcd:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 192.168.2.50
+        - 192.168.2.51
+        - 192.168.2.52
       service:
         enabled: true
         port: 2381
@@ -175,7 +175,7 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         hosts:
-          - &host "prometheus.${SECRET_PUBLIC_DOMAIN}"
+          - &host "prometheus.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
@@ -191,7 +191,7 @@ spec:
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
         hosts:
-          - &host "thanos-sidecar.${SECRET_PUBLIC_DOMAIN}"
+          - &host "thanos-sidecar.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
