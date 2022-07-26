@@ -62,6 +62,7 @@ spec:
           external-dns/is-public: "true"
           hajimari.io/enable: "true"
           hajimari.io/icon: "weather-sunset"
+          hajimari.io/group: "Media"
         hosts:
           - host: &host "qbittorrent.${SECRET_DOMAIN}"
             paths:
