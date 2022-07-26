@@ -50,7 +50,6 @@ spec:
         cert-manager.io/cluster-issuer: "letsencrypt-staging"
         hajimari.io/enable: "true"
         hajimari.io/icon: "dns"
-        hajimari.io/instance: "internal"
         hajimari.io/group: "Cluster Ops"
       path: /
       hosts:
