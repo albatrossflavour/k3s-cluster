@@ -32,6 +32,8 @@ spec:
         matchNames:
           - default
           - networking
+          - media
+          - monitoring
           - rook-ceph
       name: "Sire"
       customApps:
