@@ -10,3 +10,4 @@ resources:
   - qbittorrent
   - tautulli
   - jackett
+  - ombi
