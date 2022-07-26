@@ -53,8 +53,8 @@ spec:
           - hosts:
               - *host
     podSecurityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
+      runAsUser: 1001
+      runAsGroup: 1001
         - 100
     persistence:
       config:
