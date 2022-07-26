@@ -9,3 +9,4 @@ resources:
   - sabnzbd
   - qbittorrent
   - tautulli
+  - jackett
