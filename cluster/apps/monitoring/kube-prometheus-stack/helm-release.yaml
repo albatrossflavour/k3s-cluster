@@ -195,6 +195,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: *host
       prometheusSpec:
         replicas: 3
         replicaExternalLabelName: __replica__

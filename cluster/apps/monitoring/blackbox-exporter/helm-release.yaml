@@ -37,6 +37,7 @@ spec:
       tls:
         - hosts:
             - *host
+          secretName: *host
     allowIcmp: true
     config:
       modules:

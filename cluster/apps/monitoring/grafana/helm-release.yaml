@@ -134,6 +134,7 @@ spec:
       tls:
         - hosts:
             - *host
+          secretName: *host
     persistence:
       enabled: false
       # type: statefulset
