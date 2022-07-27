@@ -89,7 +89,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: "echo-server-tls"
+            secretName: *host
     resources:
       requests:
         cpu: 50m
