@@ -23,7 +23,7 @@ spec:
     remediation:
       retries: 5
   values:
-    replicas: 3
+    replicas: 1
     env:
       #TZ: "${TIMEZONE}"
       GF_EXPLORE_ENABLED: true
@@ -120,7 +120,7 @@ spec:
       - grafana-worldmap-panel
       - grafana-clock-panel
     serviceMonitor:
-      enabled: false
+      enabled: true
     ingress:
       enabled: true
       ingressClassName: "nginx"
@@ -132,9 +132,9 @@ spec:
         # nginx.ingress.kubernetes.io/auth-type: basic
         # nginx.ingress.kubernetes.io/auth-secret: basic-auth
         # nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
-        cert-manager.io/cluster-issuer: "letsencrypt-production"
-        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-        external-dns/is-public: "true"
+        # cert-manager.io/cluster-issuer: "letsencrypt-production"
+        # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        # external-dns/is-public: "true"
         hajimari.io/enable: "true"
         hajimari.io/icon: "television"
       hosts:
@@ -142,7 +142,7 @@ spec:
       tls:
         - hosts:
             - *host
-          secretName: *app
+          # secretName: *app
     persistence:
       enabled: false
       # type: statefulset
