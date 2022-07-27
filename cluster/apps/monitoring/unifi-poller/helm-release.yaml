@@ -44,4 +44,4 @@ spec:
         interval: 2m
         scrapeTimeout: 30s
       prometheusRule:
-        enabled: false
+        enabled: true

@@ -120,7 +120,7 @@ spec:
       - grafana-worldmap-panel
       - grafana-clock-panel
     serviceMonitor:
-      enabled: false
+      enabled: true
     ingress:
       enabled: true
       ingressClassName: "nginx"
