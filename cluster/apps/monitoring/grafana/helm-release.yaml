@@ -137,7 +137,6 @@ spec:
         external-dns/is-public: "true"
         hajimari.io/enable: "true"
         hajimari.io/icon: "television"
-        hajimari.io/group: "Media"
       hosts:
         - &host "grafana.lab.${SECRET_DOMAIN}"
       tls:
