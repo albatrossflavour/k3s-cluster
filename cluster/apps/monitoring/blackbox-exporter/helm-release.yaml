@@ -30,7 +30,7 @@ spec:
       enabled: true
       className: nginx
       hosts:
-        - host: &host "blackbox.${SECRET_DOMAIN}"
+        - host: &host "blackbox.lab.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: Prefix

@@ -64,7 +64,7 @@ spec:
           hajimari.io/icon: "waves"
           hajimari.io/group: "Media"
         hosts:
-          - host: &host "qbittorrent.${SECRET_DOMAIN}"
+          - host: &host "qbittorrent.lab.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

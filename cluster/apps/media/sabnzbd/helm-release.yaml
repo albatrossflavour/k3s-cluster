@@ -37,7 +37,7 @@ spec:
         sabnzbd.default.svc,
         sabnzbd.default.svc.cluster,
         sabnzbd.default.svc.cluster.local,
-        sabnzbd.${SECRET_DOMAIN}
+        sabnzbd.lab.${SECRET_DOMAIN}
     envFrom:
       - secretRef:
           name: *app
@@ -61,7 +61,7 @@ spec:
           hajimari.io/icon: "newspaper"
           hajimari.io/group: "Media"
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix

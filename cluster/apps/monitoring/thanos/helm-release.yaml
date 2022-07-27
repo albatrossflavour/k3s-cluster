@@ -41,7 +41,7 @@ spec:
         sidecarsNamespace: monitoring
       ingress:
         enabled: true
-        hostname: &host "thanos-query.${SECRET_DOMAIN}"
+        hostname: &host "thanos-query.lab.${SECRET_DOMAIN}"
         ingressClassName: "nginx"
         tls: true
         extraTls:
@@ -56,7 +56,7 @@ spec:
       podAntiAffinityPreset: hard
       ingress:
         enabled: true
-        hostname: &host "thanos-bucketweb.${SECRET_DOMAIN}"
+        hostname: &host "thanos-bucketweb.lab.${SECRET_DOMAIN}"
         ingressClassName: "nginx"
         tls: true
         extraTls:
@@ -73,7 +73,7 @@ spec:
       retentionResolution1h: 14d
       ingress:
         enabled: true
-        hostname: &host "thanos-compactor.${SECRET_DOMAIN}"
+        hostname: &host "thanos-compactor.lab.${SECRET_DOMAIN}"
         ingressClassName: "nginx"
         tls: true
         extraTls:
@@ -90,7 +90,7 @@ spec:
       podAntiAffinityPreset: hard
       ingress:
         enabled: true
-        hostname: &host "thanos-storegateway.${SECRET_DOMAIN}"
+        hostname: &host "thanos-storegateway.lab.${SECRET_DOMAIN}"
         ingressClassName: "nginx"
         tls: true
         extraTls:
@@ -120,7 +120,7 @@ spec:
                 expr: absent(up{job="kube-prometheus-stack-prometheus"})
       ingress:
         enabled: true
-        hostname: &host "thanos-ruler.${SECRET_DOMAIN}"
+        hostname: &host "thanos-ruler.lab.${SECRET_DOMAIN}"
         ingressClassName: "nginx"
         tls: true
         extraTls:

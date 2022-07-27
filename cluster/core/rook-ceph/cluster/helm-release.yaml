@@ -40,7 +40,7 @@ spec:
           hajimari.io/instance: "internal"
           hajimari.io/group: "Cluster Ops"
         host:
-          name: &host "rook.${SECRET_DOMAIN}"
+          name: &host "rook.lab.${SECRET_DOMAIN}"
           path: "/"
         tls:
           - hosts:

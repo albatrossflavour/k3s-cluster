@@ -96,7 +96,7 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         hosts:
-          - &host "alert-manager.${SECRET_DOMAIN}"
+          - &host "alert-manager.lab.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
@@ -175,7 +175,7 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         hosts:
-          - &host "prometheus.${SECRET_DOMAIN}"
+          - &host "prometheus.lab.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
@@ -191,7 +191,7 @@ spec:
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
         hosts:
-          - &host "thanos-sidecar.${SECRET_DOMAIN}"
+          - &host "thanos-sidecar.lab.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
