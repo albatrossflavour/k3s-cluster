@@ -55,9 +55,9 @@ spec:
       hosts:
         - &host "pihole.lab.${SECRET_DOMAIN}"
       tls:
-        - secretName: *host
+        - secretName: *app
           hosts:
-            - *app
+            - *host
     dnsmasq:
       upstreamServers: []
       customDnsEntries: []
