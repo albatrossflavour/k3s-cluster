@@ -79,7 +79,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: *host
+            secretName: *app
     persistence:
       data:
         enabled: true

@@ -52,7 +52,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: *host
+            secretName: *app
     podSecurityContext:
       runAsUser: 1001
       runAsGroup: 1001

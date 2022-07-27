@@ -89,7 +89,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: *host
+            secretName: *app
     resources:
       requests:
         cpu: 50m
