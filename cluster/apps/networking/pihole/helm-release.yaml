@@ -47,7 +47,7 @@ spec:
         nginx.ingress.kubernetes.io/auth-type: basic
         nginx.ingress.kubernetes.io/auth-secret: basic-auth
         nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
-        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         hajimari.io/enable: "true"
         hajimari.io/icon: "dns"
         hajimari.io/group: "Cluster Ops"
