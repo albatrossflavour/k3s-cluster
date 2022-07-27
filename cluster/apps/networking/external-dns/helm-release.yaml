@@ -38,8 +38,8 @@ spec:
             name: external-dns-cloud-credentials
             key: api-key
     extraArgs:
-      - --cloudflare-proxied
       - --annotation-filter=external-dns/is-public in (true)
+      # - --cloudflare-proxied
     policy: sync
     sources:
       - ingress
