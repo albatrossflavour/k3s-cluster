@@ -25,6 +25,7 @@ spec:
   values:
     replicas: 3
     env:
+      TZ: "${TIMEZONE}"
       GF_EXPLORE_ENABLED: true
       GF_PANELS_DISABLE_SANITIZE_HTML: true
       GF_LOG_FILTERS: rendering:debug
