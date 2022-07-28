@@ -23,7 +23,7 @@ spec:
     remediation:
       retries: 5
   values:
-    replicas: 1
+    replicas: 3
     env:
       TZ: "${TIMEZONE}"
       GF_EXPLORE_ENABLED: true
