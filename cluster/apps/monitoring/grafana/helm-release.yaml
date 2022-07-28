@@ -75,7 +75,7 @@ spec:
             access: proxy
             url: http://thanos-query:9090/
             # url: http://mimir-query-frontend.monitoring.svc.cluster.local:8080/prometheus
-            isDefault: false
+            isDefault: true
           - name: Loki
             type: loki
             access: proxy
