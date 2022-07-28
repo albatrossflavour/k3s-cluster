@@ -49,7 +49,7 @@ spec:
               - *host
             secretName: *host
     queryFrontend:
-      enabled: false
+      enabled: true
     bucketweb:
       enabled: true
       replicaCount: 3
