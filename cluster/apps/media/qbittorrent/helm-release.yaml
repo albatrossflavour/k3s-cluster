@@ -95,9 +95,9 @@ spec:
         server: "192.168.1.22"
         path: /volume1/Media
         mountPath: /media
-#   resources:
-#     requests:
-#       cpu: 10m
-#       memory: 250Mi
-#     limits:
-#       memory: 6000Mi
+    resources:
+      requests:
+        cpu: 10m
+        memory: 250Mi
+      limits:
+        memory: 2500Mi

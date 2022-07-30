@@ -58,6 +58,12 @@ spec:
         - secretName: *app
           hosts:
             - *host
+      resources:
+        requests:
+          cpu: 10m
+          memory: 250Mi
+        limits:
+          memory: 750Mi
     dnsmasq:
       upstreamServers: []
       customDnsEntries: []
