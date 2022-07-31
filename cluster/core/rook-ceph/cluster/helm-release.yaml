@@ -27,7 +27,7 @@ spec:
   values:
     monitoring:
       enabled: true
-      createPrometheusRules: false # FIXME
+      createPrometheusRules: true
     ingress:
       dashboard:
         ingressClassName: "nginx"
