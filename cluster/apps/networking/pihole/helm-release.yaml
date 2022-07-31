@@ -60,10 +60,10 @@ spec:
             - *host
       resources:
         requests:
-          cpu: 10m
-          memory: 250Mi
+          cpu: 5m
+          memory: 125Mi
         limits:
-          memory: 750Mi
+          memory: 250Mi
     dnsmasq:
       upstreamServers: []
       customDnsEntries: []

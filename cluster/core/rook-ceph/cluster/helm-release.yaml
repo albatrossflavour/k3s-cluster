@@ -77,52 +77,52 @@ spec:
       resources:
         mgr:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
           requests:
-            cpu: "500m"
-            memory: "512Mi"
+            cpu: "250m"
+            memory: "256Mi"
         mon:
           limits:
-            memory: "2Gi"
-          requests:
-            cpu: "1000m"
             memory: "1Gi"
+          requests:
+            cpu: "500m"
+            memory: "500Mi"
         osd:
           limits:
-            memory: "4Gi"
+            memory: "3Gi"
           requests:
-            cpu: "1000m"
-            memory: "4Gi"
+            cpu: "500m"
+            memory: "2Gi"
         prepareosd:
           limits:
-            memory: "400Mi"
+            memory: "200Mi"
           requests:
-            cpu: "500m"
-            memory: "50Mi"
+            cpu: "250m"
+            memory: "25Mi"
         mgr-sidecar:
           limits:
-            memory: "100Mi"
+            memory: "50Mi"
           requests:
-            cpu: "100m"
-            memory: "40Mi"
+            cpu: "50m"
+            memory: "20Mi"
         crashcollector:
           limits:
-            memory: "60Mi"
+            memory: "30Mi"
           requests:
-            cpu: "100m"
-            memory: "60Mi"
+            cpu: "50m"
+            memory: "30Mi"
         logcollector:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
           requests:
-            cpu: "100m"
-            memory: "100Mi"
+            cpu: "50m"
+            memory: "50Mi"
         cleanup:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
           requests:
-            cpu: "500m"
-            memory: "100Mi"
+            cpu: "250m"
+            memory: "50Mi"
 #   cephBlockPoolsVolumeSnapshotClass:
 #     enabled: true
 #     name: csi-rbdplugin-snapclass
@@ -166,10 +166,10 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 1000m
-                memory: 4Gi
+                cpu: 500m
+                memory: 3Gi
               limits:
-                memory: 4Gi
+                memory: 3Gi
         storageClass:
           enabled: true
           isDefault: false
@@ -202,10 +202,10 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 1000m
-                memory: 1Gi
+                cpu: 500m
+                memory: 500Mi
               limits:
-                memory: 2Gi
+                memory: 1Gi
             instances: 1
           healthCheck:
             bucket:
