@@ -5,5 +5,5 @@ resources:
   - namespace.yaml
   - echo-server
   - hajimari
-  - velero
+  # - velero
   # - node-red
