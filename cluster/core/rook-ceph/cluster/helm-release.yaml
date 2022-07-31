@@ -89,10 +89,10 @@ spec:
             memory: "500Mi"
         osd:
           limits:
-            memory: "3Gi"
+            memory: "2Gi"
           requests:
             cpu: "500m"
-            memory: "2Gi"
+            memory: "1Gi"
         prepareosd:
           limits:
             memory: "200Mi"
@@ -167,9 +167,9 @@ spec:
             resources:
               requests:
                 cpu: 500m
-                memory: 3Gi
+                memory: 2Gi
               limits:
-                memory: 3Gi
+                memory: 1Gi
         storageClass:
           enabled: true
           isDefault: false
