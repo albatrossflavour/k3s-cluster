@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: monitoring
 resources:
   - namespace.yaml
+  - secret.sops.yaml
   - blackbox-exporter
   - grafana
   - kube-prometheus-stack
