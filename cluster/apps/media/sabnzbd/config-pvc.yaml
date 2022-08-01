@@ -12,7 +12,14 @@ spec:
   storageClassName: ceph-block
   volumeMode: Filesystem
   csi:
+    controllerExpandSecretRef:
+      name: rook-csi-rbd-provisioner
+      namespace: rook-ceph
+    driver: rook-ceph.rbd.csi.ceph.com
     fsType: ext4
+    nodeStageSecretRef:
+      name: rook-csi-rbd-node
+      namespace: rook-ceph
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
