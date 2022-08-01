@@ -54,7 +54,7 @@ spec:
         hajimari.io/group: "Cluster Ops"
       path: /
       hosts:
-        - &host "pihole.lab.${SECRET_DOMAIN}"
+        - &host "pihole-k3s.lab.${SECRET_DOMAIN}"
       tls:
         - secretName: *app
           hosts:
