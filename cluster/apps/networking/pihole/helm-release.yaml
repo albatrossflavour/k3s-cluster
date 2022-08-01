@@ -23,6 +23,7 @@ spec:
     remediation:
       retries: 3
   values:
+    replicas: 1
     image:
       repository: pihole/pihole
       tag: "2022.07"
