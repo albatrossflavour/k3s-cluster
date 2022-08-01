@@ -80,6 +80,7 @@ spec:
       config:
         enabled: true
         existingClaim: sabnzbd-config
+        retain: true
       downloads:
         enabled: true
         type: nfs
