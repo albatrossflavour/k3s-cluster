@@ -16,3 +16,4 @@ spec:
       storage: 10Gi
   storageClassName: ceph-block-long-term
   volumeName: pvc-4795a975-a545-4565-ad43-0bc170ee0294
+#
