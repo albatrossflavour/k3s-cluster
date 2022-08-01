@@ -15,5 +15,4 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: ceph-block
-  volumeName: pvc-51ecb86d-6974-4f3a-8f58-e04025b53e6a
-  # persistentVolumeReclaimPolicy: Retain
+  # volumeName: pvc-51ecb86d-6974-4f3a-8f58-e04025b53e6a
