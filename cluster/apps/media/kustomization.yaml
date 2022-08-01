@@ -4,11 +4,11 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - scripts
-  - radarr
-  - sonarr
-  - sabnzbd
-  - qbittorrent
+  # - radarr
+  # - sonarr
+  # - sabnzbd
+  # - qbittorrent
   - tautulli
-  - jackett
+  # - jackett
   # - ombi # FIXME - not working likely due to using the linuxserver image
   - flaresolverr
