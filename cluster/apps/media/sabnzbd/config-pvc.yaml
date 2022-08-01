@@ -20,6 +20,7 @@ spec:
     nodeStageSecretRef:
       name: rook-csi-rbd-node
       namespace: rook-ceph
+  volumeHandle: 0001-0009-rook-ceph-0000000000000002-805e874c-1196-11ed-bece-62dba34dbd85
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
