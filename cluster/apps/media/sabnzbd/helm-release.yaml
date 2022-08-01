@@ -54,7 +54,7 @@ spec:
           nginx.ingress.kubernetes.io/auth-type: basic
           nginx.ingress.kubernetes.io/auth-secret: basic-auth
           nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
           hajimari.io/enable: "true"
@@ -68,7 +68,6 @@ spec:
         tls:
           - hosts:
               - *host
-              - sabnzbd1.lab.albatrossflavour.com
             secretName: *app
     podSecurityContext:
       runAsUser: 568
