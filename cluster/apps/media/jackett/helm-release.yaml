@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/jackett
-      tag: 0.20.1463
+      tag: 0.20.1539
     env:
       TZ: "${TIMEZONE}"
     service:
