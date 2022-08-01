@@ -14,5 +14,5 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: ceph-block
+  storageClassName: ceph-block-long-term
   # persistentVolumeReclaimPolicy: Retain
