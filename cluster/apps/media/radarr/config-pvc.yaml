@@ -15,4 +15,4 @@ spec:
     requests:
       storage: 15Gi
   storageClassName: ceph-block-long-term
-  # persistentVolumeReclaimPolicy: Retain
+  volumeName: pvc-e6ce866d-0ba9-4e2f-8e8c-1130c29f73f7
