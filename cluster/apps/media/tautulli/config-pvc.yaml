@@ -15,4 +15,4 @@ spec:
     requests:
       storage: 10Gi
   storageClassName: ceph-block
-  persistentVolumeReclaimPolicy: Retain
+  # persistentVolumeReclaimPolicy: Retain
