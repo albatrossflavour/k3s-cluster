@@ -105,13 +105,13 @@ spec:
     sidecar:
       skipTlsVerify: true
       dashboards:
-        enabled: true
+        enabled: false
         searchNamespace: ALL
         # folderAnnotation: grafana_folder
         # provider:
         #   foldersFromFilesStructure: true
       datasources:
-        enabled: true
+        enabled: false
         searchNamespace: ALL
     plugins:
       - natel-discrete-panel
