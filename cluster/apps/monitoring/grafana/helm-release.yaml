@@ -76,10 +76,10 @@ spec:
             url: http://thanos-query:9090/
             # url: http://mimir-query-frontend.monitoring.svc.cluster.local:8080/prometheus
             isDefault: true
-          - name: Loki
-            type: loki
-            access: proxy
-            url: http://loki-gateway:80
+#         - name: Loki
+#           type: loki
+#           access: proxy
+#           url: http://loki-gateway:80
     dashboards:
       default:
         # Ref: https://grafana.com/grafana/dashboards/7845
@@ -105,7 +105,7 @@ spec:
     sidecar:
       skipTlsVerify: true
       dashboards:
-        enabled: false
+        enabled: true
         searchNamespace: ALL
         # folderAnnotation: grafana_folder
         # provider:
