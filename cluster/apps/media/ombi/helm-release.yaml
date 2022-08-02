@@ -53,9 +53,6 @@ spec:
           - hosts:
               - *host
             secretName: *app
-    podSecurityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
     persistence:
       config:
         enabled: true
