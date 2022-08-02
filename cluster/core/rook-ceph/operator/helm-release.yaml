@@ -32,3 +32,8 @@ spec:
         memory: 128Mi
       limits:
         memory: 256Mi
+  placement:
+    all:
+      tolerations:
+        - key: env
+          operator: Exists
