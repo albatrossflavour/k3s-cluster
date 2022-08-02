@@ -16,3 +16,4 @@ spec:
       storage: 1Gi
   storageClassName: ceph-block-long-term
   volumeName: pvc-03030ebd-db8c-4be2-bc32-bd4c2f7e3a5c
+#
