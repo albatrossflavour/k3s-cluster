@@ -11,5 +11,5 @@ resources:
   - qbittorrent
   - tautulli
   - jackett
-  # - ombi # FIXME - not working likely due to using the linuxserver image
+  - ombi  # FIXME - not working likely due to using the linuxserver image
   - flaresolverr
