@@ -197,7 +197,7 @@ spec:
               - *host
             secretName: *host
       prometheusSpec:
-        replicas: 3
+        replicas: 1
         replicaExternalLabelName: __replica__
         externalLabels:
           cluster: k3s-cluster
