@@ -233,7 +233,7 @@ spec:
             cpu: 20m
             memory: 3000Mi
           limits:
-            memory: 3500Mi
+            memory: 5000Mi
 #       additionalScrapeConfigs:
 #         - job_name: coredns
 #           scrape_interval: 1m
