@@ -77,27 +77,27 @@ spec:
       resources:
         mgr:
           limits:
-            memory: "500Mi"
+            memory: "300Mi"
           requests:
-            cpu: "250m"
+            cpu: "150m"
             memory: "256Mi"
         mon:
           limits:
-            memory: "1Gi"
+            memory: "500Mi"
           requests:
             cpu: "500m"
-            memory: "500Mi"
+            memory: "250Mi"
         osd:
           limits:
-            memory: "2Gi"
-          requests:
-            cpu: "500m"
             memory: "1Gi"
+          requests:
+            cpu: "300m"
+            memory: "500Mi"
         prepareosd:
           limits:
             memory: "200Mi"
           requests:
-            cpu: "250m"
+            cpu: "150m"
             memory: "25Mi"
         mgr-sidecar:
           limits:
@@ -113,15 +113,15 @@ spec:
             memory: "30Mi"
         logcollector:
           limits:
-            memory: "500Mi"
+            memory: "250Mi"
           requests:
             cpu: "50m"
             memory: "50Mi"
         cleanup:
           limits:
-            memory: "500Mi"
+            memory: "250Mi"
           requests:
-            cpu: "250m"
+            cpu: "150m"
             memory: "50Mi"
 #   cephBlockPoolsVolumeSnapshotClass:
 #     enabled: true
@@ -166,10 +166,10 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 500m
-                memory: 2Gi
-              limits:
+                cpu: 300m
                 memory: 1Gi
+              limits:
+                memory: 500Mi
         storageClass:
           enabled: true
           isDefault: false
@@ -202,10 +202,10 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 500m
+                cpu: 300m
                 memory: 500Mi
               limits:
-                memory: 1Gi
+                memory: 500Mi
             instances: 1
           healthCheck:
             bucket:
