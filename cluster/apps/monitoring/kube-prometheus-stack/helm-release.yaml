@@ -230,10 +230,10 @@ spec:
             key: objstore.yml
         resources:
           requests:
-            cpu: 20m
+            cpu: 100m
             memory: 3000Mi
           limits:
-            memory: 5000Mi
+            memory: 7000Mi
 #       additionalScrapeConfigs:
 #         - job_name: coredns
 #           scrape_interval: 1m
