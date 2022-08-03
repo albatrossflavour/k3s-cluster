@@ -228,12 +228,12 @@ spec:
           objectStorageConfig:
             name: thanos-objstore-secret
             key: objstore.yml
-        resources:
-          requests:
-            cpu: 10m
-            memory: 500Mi
-          limits:
-            memory: 1000Mi
+#       resources:
+#         requests:
+#           cpu: 10m
+#           memory: 500Mi
+#         limits:
+#           memory: 1000Mi
 #       additionalScrapeConfigs:
 #         - job_name: coredns
 #           scrape_interval: 1m
