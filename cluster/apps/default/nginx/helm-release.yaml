@@ -54,7 +54,7 @@ spec:
       branch: main
     serverBlock: |-
       server {
-        server_name nginx.${SECRET_DOMAIN};
+        server_name nginx.lab.${SECRET_DOMAIN};
         listen 80;
         root /opt/bitnami/nginx/html/;
         index no_index;
