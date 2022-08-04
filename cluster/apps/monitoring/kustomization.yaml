@@ -10,3 +10,4 @@ resources:
   - kube-prometheus-stack
   - unifi-poller
   - thanos
+  - speedtest-exporter

@@ -83,6 +83,11 @@ spec:
     dashboards:
       default:
         # Ref: https://grafana.com/grafana/dashboards/7845
+        speedtest-exporter:
+          gnetId: 13665
+          revision: 4
+          datasource: Prometheus
+        # Ref: https://grafana.com/grafana/dashboards/7845
         unifi-client-insights:
           gnetId: 11315
           revision: 8
