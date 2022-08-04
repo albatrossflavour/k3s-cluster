@@ -74,7 +74,7 @@ spec:
         existingClaim: jackett-config
     resources:
       requests:
-        cpu: 10m
+        cpu: 1m
         memory: 250Mi
       limits:
         memory: 500Mi
