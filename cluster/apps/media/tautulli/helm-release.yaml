@@ -70,9 +70,9 @@ spec:
       config:
         enabled: true
         existingClaim: tautulli-config
-#   resources:
-#     requests:
-#       cpu: 10m
-#       memory: 250Mi
-#     limits:
-#       memory: 500Mi
+    resources:
+      requests:
+        cpu: 10m
+        memory: 250Mi
+      limits:
+        memory: 500Mi

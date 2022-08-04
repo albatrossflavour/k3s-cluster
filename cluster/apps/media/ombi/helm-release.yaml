@@ -60,9 +60,9 @@ spec:
       config:
         enabled: true
         existingClaim: ombi-config
-#   resources:
-#     requests:
-#       cpu: 10m
-#       memory: 250Mi
-#     limits:
-#       memory: 1000Mi
+    resources:
+      requests:
+        cpu: 10m
+        memory: 250Mi
+      limits:
+        memory: 1000Mi

@@ -32,3 +32,9 @@ spec:
       TZ: "${TIMEZONE}"
       PUID: 1001
       PGID: 1001
+    resources:
+      requests:
+        cpu: 10m
+        memory: 250Mi
+      limits:
+        memory: 500Mi
