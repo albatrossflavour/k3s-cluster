@@ -44,7 +44,7 @@ spec:
       tls:
         - hosts:
             - *host
-            - "toodlepip.com.au"
+            - "www.toodlepip.com.au"
           secretName: *app
       hostname: *host
     serviceAccount:
