@@ -46,7 +46,7 @@ spec:
             - *host
             - "toodlepip.com.au"
           secretName: *app
-    hostname: *host
+      hostname: *host
     serviceAccount:
       create: false
     cloneStaticSiteFromGit:
