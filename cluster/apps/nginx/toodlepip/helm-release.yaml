@@ -28,7 +28,7 @@ spec:
       main:
         ports:
           http:
-            port: &port 80
+            port: &port 8080
     ingress:
       enabled: true
       ingressClassName: "nginx"
@@ -56,8 +56,8 @@ spec:
     serverBlock: |-
       server {
         server_name www.toodlepip.com.au toodlepip.com.au;
-        listen 80;
-        root /opt/bitnami/nginx/html/;
+        listen 8080;
+        root /opt/bitnami/toodlepip/html/;
         index no_index;
         location / {
           autoindex on;
