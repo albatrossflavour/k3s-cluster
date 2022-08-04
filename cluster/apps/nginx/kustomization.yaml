@@ -4,7 +4,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - secret.sops.yaml
-  - echo-server
-  - hajimari
-  # - velero
-  # - node-red
+  - toodlepip
