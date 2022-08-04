@@ -1,0 +1,82 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: &app nginx
+  namespace: default
+spec:
+  maxHistory: 3
+  interval: 10m0s
+  suspend: false
+  releaseName: nginx
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.bitnami.com/bitnami
+      chart: nginx
+      version: 13.1.5
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system
+  values:
+    image:
+      registry: docker.io
+      repository: bitnami/nginx
+      tag: 1.23.1
+    replicaCount: 1
+    service:
+      main:
+        ports:
+          http:
+            port: &port 80
+    ingress:
+      enabled: true
+      ingressClassName: "nginx"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns/is-public: "true"
+      hosts:
+        - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+            - *host
+            - "toodlepip.com.au"
+          secretName: *app
+    serviceAccount:
+      create: false
+    cloneStaticSiteFromGit:
+      enabled: false
+      repository: https://github.com/npawelek/firmware.git
+      branch: main
+    serverBlock: |-
+      server {
+        server_name nginx.${SECRET_DOMAIN};
+        listen 80;
+        root /opt/bitnami/nginx/html/;
+        index no_index;
+        location / {
+          autoindex on;
+        }
+        location ~ /\.git {
+          deny all;
+        }
+        location ~ /README.md {
+          deny all;
+        }
+        location ~ /LICENSE {
+          deny all;
+        }
+      }
+    extraEnvVars:
+      - name: TZ
+        value: ${TZ}
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 500m
+      limits:
+        memory: 300Mi
