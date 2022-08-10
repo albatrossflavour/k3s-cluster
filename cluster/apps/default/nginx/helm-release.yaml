@@ -37,11 +37,9 @@ spec:
       rollingUpdate: {}
     serverBlock: |-
       server {
-        root /var/www/toodlepip.com.au;
-        index index.html;
-          listen 80;
-
+        listen 80;
         server_name www.toodlepip.com.au toodlepip.com.au;
+        return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
 
     extraVolumes:
