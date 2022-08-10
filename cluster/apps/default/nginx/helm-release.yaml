@@ -70,9 +70,9 @@ spec:
         enabled: true
         existingClaim: nginx-config
 
-      docs:
+      app:
         enabled: true
-        mountPath: /var/www
+        mountPath: /app
         existingClaim: nginx-docs
 
     service:
