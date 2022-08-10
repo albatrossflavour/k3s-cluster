@@ -44,10 +44,6 @@ spec:
         server_name www.toodlepip.com.au toodlepip.com.au;
       }
 
-    extraVolumeMounts:
-      - name: nginx-config
-        mountPath: /var/www
-
     ingress:
       main:
         enabled: true
@@ -71,7 +67,7 @@ spec:
 
     persistence:
       data:
-        enabled: false
+        enabled: true
         existingClaim: nginx-config
 
     service:

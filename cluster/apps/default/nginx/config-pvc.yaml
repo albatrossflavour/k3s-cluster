@@ -5,6 +5,8 @@ metadata:
   name: nginx-config
   namespace: default
 spec:
+  hostPath:
+    path: "/var/www"
   accessModes:
     - ReadWriteOnce
 
