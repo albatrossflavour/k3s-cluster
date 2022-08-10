@@ -6,5 +6,6 @@ resources:
   - secret.sops.yaml
   - echo-server
   - hajimari
+  - nginx
   # - velero
   # - node-red
