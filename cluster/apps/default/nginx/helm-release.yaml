@@ -37,7 +37,7 @@ spec:
       rollingUpdate: {}
     serverBlock: |-
       server {
-        listen 80;
+        listen 8080;
         server_name www.toodlepip.com.au toodlepip.com.au;
         return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
@@ -87,6 +87,9 @@ spec:
         mountPath: /var/www
         existingClaim: nginx-docs
 
+    service:
+      type: ClusterIP
+      port: 8080
 #   service:
 #     main:
 #       ports:
