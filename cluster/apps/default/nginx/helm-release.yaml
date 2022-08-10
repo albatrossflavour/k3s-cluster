@@ -8,11 +8,11 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: nginx-php
-      version: 1.1.2
+      chart: nginx
+      version: 13.1.4
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home
+        name: bitnami
         namespace: flux-system
       interval: 5m
   install:
@@ -26,8 +26,24 @@ spec:
     cleanupOnFail: true
   values:
     image:
-      repository: ghcr.io/truxnell/container-images/nginx-php
-      tag: v1.0.0
+      registry: docker.io
+      repository: bitnami/nginx
+      tag: 1.23.1-debian-11-r0
+    pullPolicy: IfNotPresent
+    debug: false
+    replicaCount: 1
+    updateStrategy:
+      type: RollingUpdate
+      rollingUpdate: {}
+    serverBlock: |-
+      server {
+        root /var/www/toodlepip.com.au;
+        index index.html;
+          listen 80;
+
+        server_name www.toodlepip.com.au toodlepip.com.au;
+      }
+
 
     ingress:
       main:
