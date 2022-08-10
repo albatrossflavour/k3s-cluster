@@ -67,9 +67,14 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: www.toodlepip.com.au
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - toodlepip.com.au
+              - www.toodlepip.com.au
             secretName: nginx
 
     persistence:
@@ -82,12 +87,12 @@ spec:
         mountPath: /var/www
         existingClaim: nginx-docs
 
-    service:
-      main:
-        ports:
-          http:
-            port: 80
-            targetPort: 8080
+#   service:
+#     main:
+#       ports:
+#         http:
+#           port: 80
+#           targetPort: 8080
 
     resources:
       requests:
