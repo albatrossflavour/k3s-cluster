@@ -44,6 +44,11 @@ spec:
         server_name www.toodlepip.com.au toodlepip.com.au;
       }
 
+    extraVolumes:
+      - name: nginx-docs
+        persistentVolumeClaim:
+          claimName: nginx-docs
+
     extraVolumeMounts:
       - mountPath: /var/www
         name: nginx-docs
