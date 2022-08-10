@@ -84,8 +84,7 @@ spec:
       default:
         # Ref: https://grafana.com/grafana/dashboards/7845
         speedtest-exporter:
-          gnetId: 13665
-          revision: 4
+          url: https://raw.githubusercontent.com/filipweilid/k3s-homelab/master/cluster/apps/monitoring/grafana/dashboards/speedtest-exporter.json
           datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/7845
         unifi-client-insights:
