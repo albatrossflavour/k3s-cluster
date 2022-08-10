@@ -35,10 +35,9 @@ spec:
         ingressClassName: "nginx"
         annotations:
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
           hajimari.io/enable: "true"
           hajimari.io/icon: "television"
-          hajimari.io/group: "Media"
           external-dns/is-public: "false"
         hosts:
           - host: toodlepip.com.au
@@ -48,7 +47,7 @@ spec:
         tls:
           - hosts:
               - toodlepip.com.au
-            secretName: tls.nginx
+            secretName: nginx
 
     persistence:
       data:
