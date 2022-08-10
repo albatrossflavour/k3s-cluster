@@ -70,6 +70,11 @@ spec:
         enabled: true
         existingClaim: nginx-config
 
+      docs:
+        enabled: true
+        mountPath: /var/www
+        existingClaim: nginx-docs
+
     service:
       main:
         ports:
