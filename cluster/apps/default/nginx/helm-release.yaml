@@ -44,6 +44,10 @@ spec:
         server_name www.toodlepip.com.au toodlepip.com.au;
       }
 
+    volumeMounts:
+      - mountPath: /app
+        name: nginx-docs
+
     ingress:
       main:
         enabled: true
