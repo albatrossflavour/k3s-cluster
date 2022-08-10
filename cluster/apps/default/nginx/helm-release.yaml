@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: nginx-php
+  name: nginx
   namespace: default
 spec:
   interval: 5m
@@ -69,7 +69,7 @@ spec:
     persistence:
       data:
         enabled: true
-        existingClaim: nginx-php-config
+        existingClaim: nginx-config
 
     service:
       main:
