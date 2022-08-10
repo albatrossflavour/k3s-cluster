@@ -4,10 +4,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: nginx-php-config
   namespace: default
-labels:
-  app.kubernetes.io/name: &name nginx
-  app.kubernetes.io/instance: *name
-  snapshot.home.arpa/enabled: "true"
 spec:
   accessModes:
     - ReadWriteOnce
