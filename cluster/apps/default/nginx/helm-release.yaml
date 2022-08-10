@@ -42,14 +42,14 @@ spec:
         return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
 
-    extraVolumes:
-      - name: nginx-docs
-        persistentVolumeClaim:
-          claimName: nginx-docs
+#   extraVolumes:
+#     - name: nginx-docs
+#       persistentVolumeClaim:
+#         claimName: nginx-docs
 
-    extraVolumeMounts:
-      - mountPath: /var/www
-        name: nginx-docs
+#   extraVolumeMounts:
+#     - mountPath: /var/www
+#       name: nginx-docs
 
     ingress:
       main:
