@@ -87,20 +87,20 @@ spec:
         mountPath: /var/www
         existingClaim: nginx-docs
 
-    service:
-      main:
-        ports:
-          http:
-            port: 8080
-        externalTrafficPolicy: Local
-#     type: ClusterIP
-#     port: 8080
 #   service:
 #     main:
 #       ports:
 #         http:
-#           port: 80
-#           targetPort: 8080
+#           port: 8080
+#       externalTrafficPolicy: Local
+#     port: 8080
+    service:
+      type: ClusterIP
+      main:
+        ports:
+          http:
+            port: 80
+            targetPort: 8080
 
     resources:
       requests:
