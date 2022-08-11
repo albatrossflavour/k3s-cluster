@@ -16,15 +16,6 @@ spec:
         name: minecraft-server-charts
         namespace: flux-system
       interval: 5m
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-          - matchExpressions:
-              - key: name
-                operator: In
-                values:
-                  - minecraft
   values:
     image:
       repository: itzg/minecraft-server
@@ -48,10 +39,11 @@ spec:
         externalTrafficPolicy: Local
     resources:
       requests:
-        memory: 2Gi
+        memory: 4Gi
         cpu: 250m
       limits:
-        memory: 2Gi
+        memory: 4Gi
+        cpu: 250m
     podAnnotations:
       backup.velero.io/backup-volumes: datadir
     extraEnv:
@@ -61,14 +53,15 @@ spec:
     minecraftServer:
       eula: "TRUE"
       version: "LATEST"
-      type: PAPER
+      type: SPIGOT
       forceReDownload: true
-      onlineMode: false
-      difficulty: peaceful
-      maxTickTime: -1
+      onlineMode: true
+      difficulty: normal
+      maxTickTime: 60000
       serviceType: LoadBalancer
-      gameMode: adventure
-      motd: "\u00a7feviljungle\u00a7 - \u00a7a\u00a7llobby\u00a7"
+      gameMode: survival
+      motd: '\u00A7b\u00A7lThe Kalooma \u00A7esmp\: \u00A77[1.8-1.19] \n\u00A77\u00A7oNew Update Out Now\!'
       icon: https://www.freeiconspng.com/uploads/minecraft-server-icon-13.png
+      ops: pdlfeggs
       rcon:
         enabled: false
