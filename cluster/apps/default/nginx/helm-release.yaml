@@ -83,21 +83,9 @@ spec:
 
     persistence:
       data:
-        enabled: true
+        enabled: false
         existingClaim: nginx-config
 
-      app:
-        enabled: true
-        mountPath: /var/www
-        existingClaim: nginx-docs
-
-#   service:
-#     main:
-#       ports:
-#         http:
-#           port: 8080
-#       externalTrafficPolicy: Local
-#     port: 8080
     service:
       ports:
         http: 8080
