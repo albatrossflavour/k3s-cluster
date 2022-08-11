@@ -16,15 +16,15 @@ spec:
         name: minecraft-server-charts
         namespace: flux-system
       interval: 5m
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: name
-                    operator: In
-                    values:
-                      - minecraft
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: name
+                operator: In
+                values:
+                  - minecraft
   values:
     image:
       repository: itzg/minecraft-server
