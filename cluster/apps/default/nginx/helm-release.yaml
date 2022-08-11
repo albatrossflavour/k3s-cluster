@@ -37,7 +37,7 @@ spec:
       rollingUpdate: {}
     serverBlock: |-
       server {
-        listen 80;
+        listen 8080;
         server_name www.toodlepip.com.au toodlepip.com.au;
         return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
@@ -99,8 +99,7 @@ spec:
       main:
         ports:
           http:
-            port: 80
-            targetPort: 80
+            port: 8080
 
     resources:
       requests:
