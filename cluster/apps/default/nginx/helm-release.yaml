@@ -95,6 +95,8 @@ spec:
 #       externalTrafficPolicy: Local
 #     port: 8080
     service:
+      ports:
+        http: 8080
       type: ClusterIP
       main:
         ports:
