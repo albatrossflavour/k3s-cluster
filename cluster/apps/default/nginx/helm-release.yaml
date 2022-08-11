@@ -88,8 +88,13 @@ spec:
         existingClaim: nginx-docs
 
     service:
-      type: ClusterIP
-      port: 8080
+      main:
+        ports:
+          http:
+            port: 8080
+        externalTrafficPolicy: Local
+#     type: ClusterIP
+#     port: 8080
 #   service:
 #     main:
 #       ports:
