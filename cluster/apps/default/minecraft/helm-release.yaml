@@ -52,8 +52,8 @@ spec:
       #  MODS: "https://github.com/EssentialsX/Essentials/releases/download/2.19.4/EssentialsX-2.19.4.jar"
     minecraftServer:
       eula: "TRUE"
-      version: "LATEST"
-      type: "1.16.5"
+      version: "1.16.5"
+      type: "SPIGOT"
       forceReDownload: false
       memory: 4192M
       jvmOpts: "-XX:ParallelGCThreads=2 -XX:+UseG1GC -DSpigot.ignoreJavaVersion=true"
