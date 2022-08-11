@@ -53,6 +53,9 @@ spec:
 
     ingress:
       hostname: "/*"
+      extraHosts:
+        - name: toodlepip.com.au
+          path: /
       main:
         enabled: true
         ingressClassName: "nginx"
