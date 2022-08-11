@@ -34,10 +34,32 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
+    - host: www.bandcamp.tv
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+    - host: bandcamp.tv
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
   tls:
     - hosts:
         - toodlepip.com.au
         - www.toodlepip.com.au
+        - bandcamp.tv
+        - www.bandcamp.tv
       secretName: nginx
 status:
   loadBalancer:

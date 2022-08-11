@@ -38,6 +38,12 @@ spec:
     serverBlock: |-
       server {
         listen 8080;
+        server_name www.bandcamp.tv bandcamp.tv;
+        return 301 $scheme://albatrossflavour.com;
+      }
+
+      server {
+        listen 8080;
         server_name www.toodlepip.com.au toodlepip.com.au;
         return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
@@ -55,6 +61,10 @@ spec:
       hostname: "/*"
       extraHosts:
         - name: toodlepip.com.au
+          path: /
+        - name: banddcamp.tv
+          path: /
+        - name: www.banddcamp.tv
           path: /
       main:
         enabled: true
@@ -75,10 +85,20 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: www.bandcamp.tv
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: bandcamp.tv
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - toodlepip.com.au
               - www.toodlepip.com.au
+              - bandcamp.tv
+              - www.bandcamp.tv
             secretName: nginx
 
     persistence:
