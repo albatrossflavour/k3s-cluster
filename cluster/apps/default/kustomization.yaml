@@ -7,5 +7,6 @@ resources:
   - echo-server
   - hajimari
   - nginx
+  - minecraft
   # - velero
   # - node-red
