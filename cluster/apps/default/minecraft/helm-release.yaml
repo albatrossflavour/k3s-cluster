@@ -55,6 +55,7 @@ spec:
       version: "LATEST"
       type: SPIGOT
       forceReDownload: true
+      memory: 3182M
       onlineMode: true
       difficulty: normal
       maxTickTime: 60000
