@@ -108,12 +108,12 @@ spec:
 
     service:
       ports:
-        http: 8080
+        http: &port 8080
       type: ClusterIP
       main:
         ports:
           http:
-            port: 8080
+            port: *port
 
     resources:
       requests:
