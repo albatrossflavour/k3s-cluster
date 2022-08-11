@@ -53,9 +53,10 @@ spec:
     minecraftServer:
       eula: "TRUE"
       version: "LATEST"
-      type: SPIGOT
+      type: "1.16.5"
       forceReDownload: false
-      memory: 3182M
+      memory: 4192M
+      jvmOpts: "-XX:ParallelGCThreads=2 -XX:+UseG1GC -DSpigot.ignoreJavaVersion=true"
       onlineMode: false
       difficulty: normal
       maxTickTime: 60000
