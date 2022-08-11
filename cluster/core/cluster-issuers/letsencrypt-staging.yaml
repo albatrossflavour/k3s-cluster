@@ -20,3 +20,4 @@ spec:
           dnsZones:
             - ${SECRET_DOMAIN}
             - toodlepip.com.au
+            - bandcamp.tv
