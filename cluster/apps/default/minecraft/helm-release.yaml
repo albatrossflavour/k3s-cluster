@@ -19,7 +19,8 @@ spec:
   values:
     image:
       repository: itzg/minecraft-server
-      tag: 2022.10.0-java17
+      # tag: 2022.10.0-java17
+      tag: java11
     persistence:
       dataDir:
         existingClaim: minecraft-data
@@ -52,10 +53,8 @@ spec:
       #  MODS: "https://github.com/EssentialsX/Essentials/releases/download/2.19.4/EssentialsX-2.19.4.jar"
     minecraftServer:
       eula: "TRUE"
-      # version: "1.16.5"
-      # type: "SPIGOT"
-      version: "LATEST"
-      type: "PAPER"
+      version: "1.16.5"
+      type: "SPIGOT"
       forceReDownload: false
       memory: 4192M
       jvmOpts: "-XX:ParallelGCThreads=2 -XX:+UseG1GC -DSpigot.ignoreJavaVersion=true"
