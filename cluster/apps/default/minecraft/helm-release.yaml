@@ -24,6 +24,19 @@ spec:
       dataDir:
         existingClaim: minecraft-data
         enabled: true
+    service:
+      minecraft:
+        enabled: true
+        type: LoadBalancer
+        externalIPs:
+          - "${SVC_MINECRAFT_ADDR}"
+        ports:
+          minecraft:
+            enabled: true
+            port: 25565
+            protocol: TCP
+            targetPort: 25565
+        externalTrafficPolicy: Local
     resources:
       requests:
         memory: 2Gi
