@@ -56,10 +56,10 @@ spec:
       enabled: false
       failureThreshold: 300
       periodSeconds: 10
-    resources:
-      limits:
-        memory: 3Gi
-        cpu: 2500m
+#   resources:
+#     limits:
+#       memory: 3Gi
+#       cpu: 2500m
     podAnnotations:
       backup.velero.io/backup-volumes: datadir
     extraEnv:
