@@ -79,10 +79,11 @@ spec:
       onlineMode: true
       difficulty: default
       maxTickTime: -1
+      servicePort: 25565
       serviceType: LoadBalancer
       gameMode: survival
       motd: '\u00A7b\u00A7lThe Kalooma \u00A7esmp\: \u00A77[1.8-1.19] \n\u00A77\u00A7oNew Update Out Now\!'
-      icon: 'https://static.planetminecraft.com/files/banner/887070_2.png'
+      # icon: 'https://static.planetminecraft.com/files/banner/887070_2.png'
       ops: pdlfeggs
       rcon:
         enabled: false
