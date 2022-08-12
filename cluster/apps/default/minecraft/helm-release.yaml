@@ -27,6 +27,7 @@ spec:
       dataDir:
         existingClaim: minecraft-data
         enabled: true
+        volumeName: pvc-e2b040fa-b9c7-4aec-95cf-66995053c5cc
     service:
       minecraft:
         enabled: true
