@@ -29,9 +29,9 @@ spec:
       cookieSecret: ${OAUTH2_PROXY_COOKIE_SECRET}
       configFile: |-
         provider = "google"
-        oidc_issuer_url = "https://auth.lab.${SECRET_DOMAIN}"
+        oidc_issuer_url = "https://auth.${SECRET_DOMAIN}"
         auth_logging = true
-        cookie_domains = ".lab.${SECRET_DOMAIN}"
+        cookie_domains = ".${SECRET_DOMAIN}"
         cookie_secure = true
         email_domains = []
         pass_access_token = true
