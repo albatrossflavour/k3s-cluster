@@ -235,7 +235,7 @@ spec:
           limits:
             memory: 7000Mi
         additionalScrapeConfigs:
-          - job_name: luggage
+          - job_name: node_exporter
             scrape_interval: 1m
             scrape_timeout: 10s
             honor_timestamps: true
