@@ -234,14 +234,14 @@ spec:
             memory: 3000Mi
           limits:
             memory: 7000Mi
-#       additionalScrapeConfigs:
-#         - job_name: coredns
-#           scrape_interval: 1m
-#           scrape_timeout: 10s
-#           honor_timestamps: true
-#           static_configs:
-#             - targets:
-#                 - "opnsense.${SECRET_PRIVATE_DOMAIN}:9153"
+        additionalScrapeConfigs:
+          - job_name: luggage
+            scrape_interval: 1m
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                  - "192.168.1.22:9100"
 #         - job_name: frr-exporter
 #           scrape_interval: 1m
 #           scrape_timeout: 10s
