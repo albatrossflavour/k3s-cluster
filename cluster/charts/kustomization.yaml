@@ -20,3 +20,4 @@ resources:
   - vmware-tanzu.yaml
   - minecraft-server-charts.yaml
   - oauth2-proxy.yaml
+  - kubernetes-dashboard.yaml
