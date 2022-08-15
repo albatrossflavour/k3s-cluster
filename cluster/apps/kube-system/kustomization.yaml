@@ -9,3 +9,4 @@ resources:
   - reflector
   - reloader
   - kube-vip
+  - kubernetes-dashboard
