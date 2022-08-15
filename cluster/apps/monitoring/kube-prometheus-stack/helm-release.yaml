@@ -236,14 +236,14 @@ spec:
             memory: 7000Mi
         additionalScrapeConfigs:
           - job_name: node-exporter
-            scrape_interval: 1m
+            scrape_interval: 15s
             scrape_timeout: 10s
             honor_timestamps: true
             static_configs:
               - targets:
                   - "192.168.1.22:9100"
           - job_name: zigbee2mqtt
-            scrape_interval: 1m
+            scrape_interval: 15s
             scrape_timeout: 10s
             honor_timestamps: true
             static_configs:
