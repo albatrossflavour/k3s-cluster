@@ -19,3 +19,4 @@ resources:
   - grafana-charts.yaml
   - vmware-tanzu.yaml
   - minecraft-server-charts.yaml
+  - oauth2-proxy.yaml
