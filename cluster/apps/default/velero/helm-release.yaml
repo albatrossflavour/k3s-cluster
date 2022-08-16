@@ -30,6 +30,7 @@ spec:
       backupStorageLocation:
         name: default
         bucket: velero
+        default: true
         config:
           region: us-east-1
           s3ForcePathStyle: true
@@ -79,6 +80,8 @@ spec:
         limits:
           memory: 3000Mi
           cpu: null
+    credentials:
+      existingSecret: velero-helm-values
     schedules:
       daily-backup:
         schedule: "0 6 * * *"
