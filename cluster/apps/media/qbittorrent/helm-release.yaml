@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/qbittorrent
-      tag: 4.4.3.1@sha256:e74c1817b272395ec1df2347d376d67b9e4d11e426bccf849d1f275f7e7931d5
+      tag: 4.4.3.1@sha256:3900157743dbe4130fec2bfd07269b0d0c11cfd671c1a83965cda47bd5cec9fa
     env:
       TZ: "${TIMEZONE}"
       QBITTORRENT__PORT: &port 80
@@ -54,9 +54,8 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          nginx.ingress.kubernetes.io/auth-type: basic
-          nginx.ingress.kubernetes.io/auth-secret: basic-auth
-          nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
+          nginx.ingress.kubernetes.io/auth-url: https://auth.${SECRET_DOMAIN}/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.${SECRET_DOMAIN}/oauth2/start
           nginx.ingress.kubernetes.io/satisfy: "any"
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"

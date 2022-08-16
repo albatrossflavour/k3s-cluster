@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: 39.4.0
+      version: 39.6.0
       sourceRef:
         kind: HelmRepository
         name: prometheus-community-charts
@@ -234,14 +234,21 @@ spec:
             memory: 3000Mi
           limits:
             memory: 7000Mi
-#       additionalScrapeConfigs:
-#         - job_name: coredns
-#           scrape_interval: 1m
-#           scrape_timeout: 10s
-#           honor_timestamps: true
-#           static_configs:
-#             - targets:
-#                 - "opnsense.${SECRET_PRIVATE_DOMAIN}:9153"
+        additionalScrapeConfigs:
+          - job_name: node-exporter
+            scrape_interval: 15s
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                  - "192.168.1.22:9100"
+          - job_name: zigbee2mqtt
+            scrape_interval: 15s
+            scrape_timeout: 10s
+            honor_timestamps: true
+            static_configs:
+              - targets:
+                  - "192.168.1.22:9009"
 #         - job_name: frr-exporter
 #           scrape_interval: 1m
 #           scrape_timeout: 10s

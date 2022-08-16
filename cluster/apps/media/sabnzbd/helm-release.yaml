@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/sabnzbd
-      tag: 3.6.0@sha256:1d24f02d37eaee8327d488dc63de84394fdb106ca9af51742c578697aa5ad7b3
+      tag: 3.6.0@sha256:1803edbc4d671b6e32853648358fd1c439986d489d9089d30c8fc2ffecfd6520
     env:
       TZ: "${TIMEZONE}"
       SABNZBD__PORT: &port 80
@@ -51,9 +51,8 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          nginx.ingress.kubernetes.io/auth-type: basic
-          nginx.ingress.kubernetes.io/auth-secret: basic-auth
-          nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required'
+          nginx.ingress.kubernetes.io/auth-url: https://auth.${SECRET_DOMAIN}/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.${SECRET_DOMAIN}/oauth2/start
           nginx.ingress.kubernetes.io/satisfy: "any"
           nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
           nginx.ingress.kubernetes.io/force-ssl-redirect: "true"

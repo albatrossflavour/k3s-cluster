@@ -1,0 +1,67 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/target: ipv4.${SECRET_DOMAIN}
+    external-dns/is-public: "true"
+    meta.helm.sh/release-name: nginx
+    meta.helm.sh/release-namespace: default
+  generation: 1
+  name: nginx
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: toodlepip.com.au
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+    - host: www.toodlepip.com.au
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+    - host: www.bandcamp.tv
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+    - host: bandcamp.tv
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
+  tls:
+    - hosts:
+        - toodlepip.com.au
+        - www.toodlepip.com.au
+        - bandcamp.tv
+        - www.bandcamp.tv
+      secretName: nginx
+status:
+  loadBalancer:
+    ingress:
+      - ip: ${METALLB_INGRESS_ADDR}

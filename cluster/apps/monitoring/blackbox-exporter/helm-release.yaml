@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: prometheus-blackbox-exporter
-      version: 6.0.0
+      version: 7.0.0
       sourceRef:
         kind: HelmRepository
         name: prometheus-community-charts
@@ -53,26 +53,26 @@ spec:
           timeout: 30s
           icmp:
             preferred_ip_protocol: "ip4"
-#   serviceMonitor:
-#     enabled: true
-#     defaults:
-#       labels:
-#         release: prometheus
-#       interval: 2m
-#       scrapeTimeout: 30s
-#     targets:
-#       - module: http_2xx
-#         name: opnsense-http
-#         url: "http://opnsense.${SECRET_PRIVATE_DOMAIN}"
+    serviceMonitor:
+      enabled: true
+      defaults:
+        labels:
+          release: prometheus
+        interval: 15s
+        scrapeTimeout: 30s
+      targets:
+        - module: http_2xx
+          name: betty-http
+          url: "http://10.10.20.208"
 #       - module: http_2xx
 #         name: pikvm-http
 #         url: "http://pikvm.${SECRET_PRIVATE_DOMAIN}"
 #       - module: http_2xx
 #         name: unifi-http
 #         url: "https://unifi.${SECRET_PRIVATE_DOMAIN}"
-#       - module: icmp
-#         name: opnsense-icmp
-#         url: opnsense
+        - module: icmp
+          name: betty-icmp
+          url: 10.10.20.208
 #       - module: icmp
 #         name: open-garage-icmp
 #         url: open-garage
@@ -109,33 +109,33 @@ spec:
 #       - module: icmp
 #         name: dell-idrac-0-icmp
 #         url: dell-idrac-0
-#   prometheusRule:
-#     enabled: true
-#     additionalLabels:
-#       app: prometheus-operator
-#       release: prometheus
-#     rules:
-#       - alert: BlackboxSslCertificateWillExpireSoon
-#         expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 3
-#         for: 15m
-#         labels:
-#           severity: critical
-#         annotations:
-#           description: |-
-#             The SSL certificate for {{"{{ $labels.target }}"}} will expire in less than 3 days
-#       - alert: BlackboxSslCertificateExpired
-#         expr: probe_ssl_earliest_cert_expiry - time() <= 0
-#         for: 15m
-#         labels:
-#           severity: critical
-#         annotations:
-#           description: |-
-#             The SSL certificate for {{"{{ $labels.target }}"}} has expired
-#       - alert: BlackboxProbeFailed
-#         expr: probe_success == 0
-#         for: 15m
-#         labels:
-#           severity: critical
-#         annotations:
-#           description: |-
-#             The host {{"{{ $labels.target }}"}} is currently unreachable
+    prometheusRule:
+      enabled: true
+      additionalLabels:
+        app: prometheus-operator
+        release: prometheus
+      rules:
+        - alert: BlackboxSslCertificateWillExpireSoon
+          expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 3
+          for: 15m
+          labels:
+            severity: critical
+          annotations:
+            description: |-
+              The SSL certificate for {{"{{ $labels.target }}"}} will expire in less than 3 days
+        - alert: BlackboxSslCertificateExpired
+          expr: probe_ssl_earliest_cert_expiry - time() <= 0
+          for: 15m
+          labels:
+            severity: critical
+          annotations:
+            description: |-
+              The SSL certificate for {{"{{ $labels.target }}"}} has expired
+        - alert: BlackboxProbeFailed
+          expr: probe_success == 0
+          for: 15m
+          labels:
+            severity: critical
+          annotations:
+            description: |-
+              The host {{"{{ $labels.target }}"}} is currently unreachable

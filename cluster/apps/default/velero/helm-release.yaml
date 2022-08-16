@@ -11,7 +11,7 @@ spec:
     spec:
       # renovate: registryUrl=https://vmware-tanzu.github.io/helm-charts
       chart: velero
-      version: 2.30.1
+      version: 2.31.0
       sourceRef:
         kind: HelmRepository
         name: vmware-tanzu
@@ -30,11 +30,12 @@ spec:
       backupStorageLocation:
         name: default
         bucket: velero
+        default: true
         config:
           region: us-east-1
           s3ForcePathStyle: true
-          s3Url: http://192.168.1.22:9001
-          publicUrl: https://192.168.1.22:9001
+          s3Url: http://192.168.1.22:9000
+          publicUrl: http://192.168.1.22
       volumeSnapshotLocation:
         name: aws
         config:
@@ -79,6 +80,8 @@ spec:
         limits:
           memory: 3000Mi
           cpu: null
+    credentials:
+      existingSecret: velero-helm-values
     schedules:
       daily-backup:
         schedule: "0 * * * *"
@@ -93,6 +96,3 @@ spec:
 #         ttl: "120h"
 #         includedNamespaces:
 #         - default
-  valuesFrom:
-    - secretRef:
-        name: "velero-helm-values"
