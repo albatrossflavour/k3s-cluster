@@ -43,6 +43,6 @@ spec:
       - --enable-skip-login
       - --disable-settings-authorizer
       - --enable-insecure-login
-      - --token=ttl=129600000
+      - --token-ttl=129600000
     metricsScraper:
       enabled: true
