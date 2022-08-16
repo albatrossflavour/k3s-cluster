@@ -8,5 +8,5 @@ resources:
   - hajimari
   - nginx
   - minecraft
-  # - velero
+  - velero
   # - node-red
