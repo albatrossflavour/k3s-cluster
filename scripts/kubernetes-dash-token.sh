@@ -4,7 +4,7 @@ set -e
 
 INGRESS="kubernetes-dashboard"
 NAMESPACE="kube-system"
-TOKEN_PREFIX="k8s-dash-user"
+TOKEN_PREFIX="admin-user"
 
 HOSTNAME=$(kubectl get ingress ${INGRESS} -n ${NAMESPACE} -o 'jsonpath={.spec.rules[0].host}')
 SECRET_NAME=$(kubectl get secret -n ${NAMESPACE} | grep ${TOKEN_PREFIX} | awk '{print $1}')
