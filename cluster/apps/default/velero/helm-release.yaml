@@ -84,7 +84,7 @@ spec:
       existingSecret: velero-helm-values
     schedules:
       daily-backup:
-        schedule: "0 6 * * *"
+        schedule: "0 * * * *"
         template:
           ttl: "120h"
 #     mcbr-minecraft-bedrock-hourly:
