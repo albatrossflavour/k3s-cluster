@@ -92,7 +92,7 @@ spec:
         template:
           labelSelector:
             matchLabels:
-              app: minecraft
+              app: kalooma-minecraft
           ttl: "120h"
           includedNamespaces:
           - default
