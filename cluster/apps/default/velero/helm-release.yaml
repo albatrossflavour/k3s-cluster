@@ -62,9 +62,10 @@ spec:
       enabled: true
       serviceMonitor:
         enabled: true
+    backupsEnabled: true
     snapshotsEnabled: true
     deployRestic: true
-    upgradeCRDs: false
+    upgradeCRDs: true
     restic:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
