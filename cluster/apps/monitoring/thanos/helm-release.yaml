@@ -27,16 +27,6 @@ spec:
     - name: kube-prometheus-stack
       namespace: monitoring
   values:
-    minio:
-      auth:
-        rootPassword: "${THANOS_S3_SECRET_KEY}"
-        rootUser: "${THANOS_S3_ACCESS_KEY}"
-      defaultBuckets: thanos
-      enabled: true
-      accessKey:
-        password: "${THANOS_S3_SECRET_KEY}"
-      secretKey:
-        password: "${THANOS_S3_ACCESS_KEY}"
     objstoreConfig: |-
       type: s3
       config:
@@ -124,7 +114,7 @@ spec:
             secretName: *host
       persistence:
         enabled: true
-        # storageClass: "ceph-block"
+        storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
@@ -162,25 +152,24 @@ spec:
       enabled: true
       serviceMonitor:
         enabled: true
-# valuesFrom:
-#   - targetPath: objstoreConfig.config.bucket
-#     kind: ConfigMap
-#     name: thanos-ceph-bucket
-#     valuesKey: BUCKET_NAME
-#   - targetPath: objstoreConfig.config.endpoint
-#     kind: ConfigMap
-#     name: thanos-ceph-bucket
-#     valuesKey: BUCKET_HOST
-#   - targetPath: objstoreConfig.config.region
-#     kind: ConfigMap
-#     name: thanos-ceph-bucket
-#     valuesKey: BUCKET_REGION
-#   - targetPath: objstoreConfig.config.access_key
-#     kind: Secret
-#     name: thanos-ceph-bucket
-#     valuesKey: AWS_ACCESS_KEY_ID
-#   - targetPath: objstoreConfig.config.secret_key
-#     kind: Secret
-#     name: thanos-ceph-bucket
-#     valuesKey: AWS_SECRET_ACCESS_KEY
-#
+  valuesFrom:
+    - targetPath: objstoreConfig.config.bucket
+      kind: ConfigMap
+      name: thanos-ceph-bucket
+      valuesKey: BUCKET_NAME
+    - targetPath: objstoreConfig.config.endpoint
+      kind: ConfigMap
+      name: thanos-ceph-bucket
+      valuesKey: BUCKET_HOST
+    - targetPath: objstoreConfig.config.region
+      kind: ConfigMap
+      name: thanos-ceph-bucket
+      valuesKey: BUCKET_REGION
+    - targetPath: objstoreConfig.config.access_key
+      kind: Secret
+      name: thanos-ceph-bucket
+      valuesKey: AWS_ACCESS_KEY_ID
+    - targetPath: objstoreConfig.config.secret_key
+      kind: Secret
+      name: thanos-ceph-bucket
+      valuesKey: AWS_SECRET_ACCESS_KEY
