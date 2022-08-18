@@ -120,3 +120,12 @@ spec:
       nameservers:
         - 127.0.0.1
         - 8.8.8.8
+    additionalContainers:
+      fsfreeze:
+        name: fsfreeze
+        image: ghcr.io/k8s-at-home/fsfreeze:v2.37-r0
+        volumeMounts:
+          - name: pihole-data
+            mountPath: /etc/pihole
+        securityContext:
+          privileged: true
