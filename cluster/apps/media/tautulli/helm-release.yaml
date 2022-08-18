@@ -70,7 +70,7 @@ spec:
         enabled: true
         existingClaim: tautulli-config
     podAnnotations:
-      backup.velero.io/backup-volumes: tautulli-config
+      backup.velero.io/backup-volumes: config
       pre.hook.backup.velero.io/container: fsfreeze
       pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/config"]'
       post.hook.backup.velero.io/container: fsfreeze
