@@ -27,8 +27,8 @@ spec:
     - name: kube-prometheus-stack
       namespace: monitoring
   values:
-    objstoreConfig:
-      type: s3
+    objstoreConfig: |
+      type: S3
       config:
         bucket: thanos
         endpoint: "192.168.1.22:9000"
@@ -114,7 +114,7 @@ spec:
             secretName: *host
       persistence:
         enabled: true
-        storageClass: "ceph-block"
+        # storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
