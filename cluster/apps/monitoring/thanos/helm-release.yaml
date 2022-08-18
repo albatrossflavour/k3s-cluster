@@ -117,6 +117,7 @@ spec:
       persistence:
         enabled: true
         # storageClass: "ceph-block"
+        #
         size: 20Gi
     ruler:
       enabled: true
