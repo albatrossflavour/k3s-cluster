@@ -60,6 +60,12 @@ spec:
           - hosts:
               - *host
             secretName: *app
+    podAnnotations:
+      backup.velero.io/backup-volumes: jackett-config
+      pre.hook.backup.velero.io/container: fsfreeze
+      pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/config"]'
+      post.hook.backup.velero.io/container: fsfreeze
+      post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/config"]'
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

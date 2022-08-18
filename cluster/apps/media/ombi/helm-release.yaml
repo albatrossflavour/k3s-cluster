@@ -55,6 +55,12 @@ spec:
           - hosts:
               - *host
             secretName: *app
+    podAnnotations:
+      backup.velero.io/backup-volumes: ombi-config
+      pre.hook.backup.velero.io/container: fsfreeze
+      pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/config"]'
+      post.hook.backup.velero.io/container: fsfreeze
+      post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/config"]'
     persistence:
       config:
         enabled: true
