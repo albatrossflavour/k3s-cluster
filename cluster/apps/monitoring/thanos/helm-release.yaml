@@ -20,11 +20,9 @@ spec:
     createNamespace: true
     remediation:
       retries: 5
-    disableWait: true
   upgrade:
     remediation:
       retries: 5
-    disableWait: true
   dependsOn:
     - name: kube-prometheus-stack
       namespace: monitoring
@@ -116,8 +114,7 @@ spec:
             secretName: *host
       persistence:
         enabled: true
-        # storageClass: "ceph-block"
-        #
+        storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
