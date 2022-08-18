@@ -110,22 +110,9 @@ spec:
             memory: "128Mi"
     podAnnotations:
       backup.velero.io/backup-volumes: pihole-data
-      pre.hook.backup.velero.io/container: fsfreeze
-      pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/etc/pihole"]'
-      post.hook.backup.velero.io/container: fsfreeze
-      post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/etc/pihole"]'
     podDnsConfig:
       enabled: true
       policy: "None"
       nameservers:
         - 127.0.0.1
         - 8.8.8.8
-    additionalContainers:
-      fsfreeze:
-        name: fsfreeze
-        image: ghcr.io/k8s-at-home/fsfreeze:v2.37-r0
-        volumeMounts:
-          - name: pihole-data
-            mountPath: /etc/pihole
-        securityContext:
-          privileged: true
