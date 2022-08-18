@@ -86,9 +86,11 @@ spec:
       nodeSelector:
         beta.kubernetes.io/arch: amd64
       persistence:
-        enabled: true
-        storageClass: "ceph-block"
-        size: 50Gi
+        enabled: false
+      # persistence:
+        # enabled: true
+        # storageClass: "ceph-block"
+        # size: 50Gi
     storegateway:
       enabled: true
       replicaCount: 3
@@ -106,7 +108,6 @@ spec:
             secretName: *host
       persistence:
         enabled: true
-        storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
