@@ -38,8 +38,9 @@ spec:
         metallb.universe.tf/allow-shared-ip: pihole-svc
       type: LoadBalancer
     persistentVolumeClaim:
-      enabled: true
-      existingClaim: pihole-data
+      config:
+        enabled: true
+        existingClaim: pihole-data
     adminPassword: "admin"
     ingress:
       enabled: true
@@ -109,7 +110,7 @@ spec:
           limits:
             memory: "128Mi"
     podAnnotations:
-      backup.velero.io/backup-volumes: pihole-data
+      backup.velero.io/backup-volumes: config
     podDnsConfig:
       enabled: true
       policy: "None"
