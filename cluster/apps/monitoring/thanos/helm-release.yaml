@@ -94,17 +94,15 @@ spec:
       nodeSelector:
         beta.kubernetes.io/arch: amd64
       persistence:
-        enabled: false
-      # persistence:
-        # enabled: true
-        # storageClass: "ceph-block"
-        # size: 50Gi
+        enabled: true
+        storageClass: "ceph-block"
+        size: 50Gi
     storegateway:
       enabled: true
-      replicaCount: 1
-      # podAntiAffinityPreset: hard
-      # nodeSelector:
-        # beta.kubernetes.io/arch: amd64
+      replicaCount: 3
+      podAntiAffinityPreset: hard
+      nodeSelector:
+        beta.kubernetes.io/arch: amd64
       ingress:
         enabled: true
         hostname: &host "thanos-storegateway.lab.${SECRET_DOMAIN}"
@@ -116,6 +114,7 @@ spec:
             secretName: *host
       persistence:
         enabled: true
+        storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
