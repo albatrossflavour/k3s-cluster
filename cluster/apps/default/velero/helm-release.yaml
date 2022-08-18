@@ -88,12 +88,12 @@ spec:
         schedule: "0 4 * * *"
         template:
           ttl: "120h"
-      minecraft-hourly:
-        schedule: "0 */6 * * *"
-        template:
-          labelSelector:
-            matchLabels:
-              app: kalooma-minecraft
-          ttl: "120h"
-          includedNamespaces:
-          - default
+#     minecraft-hourly:
+#       schedule: "0 */6 * * *"
+#       template:
+#         labelSelector:
+#           matchLabels:
+#             app: kalooma-minecraft
+#         ttl: "120h"
+#         includedNamespaces:
+#         - default
