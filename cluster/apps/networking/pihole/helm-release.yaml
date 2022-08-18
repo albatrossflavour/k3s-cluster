@@ -108,6 +108,12 @@ spec:
         resources:
           limits:
             memory: "128Mi"
+    podAnnotations:
+      backup.velero.io/backup-volumes: pihole-data
+      pre.hook.backup.velero.io/container: fsfreeze
+      pre.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--freeze", "/etc/pihole"]'
+      post.hook.backup.velero.io/container: fsfreeze
+      post.hook.backup.velero.io/command: '["/sbin/fsfreeze", "--unfreeze", "/etc/pihole"]'
     podDnsConfig:
       enabled: true
       policy: "None"
