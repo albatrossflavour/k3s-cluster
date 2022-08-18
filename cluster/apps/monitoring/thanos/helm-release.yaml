@@ -116,7 +116,7 @@ spec:
             secretName: *host
       persistence:
         enabled: true
-        storageClass: "ceph-block"
+        # storageClass: "ceph-block"
         size: 20Gi
     ruler:
       enabled: true
