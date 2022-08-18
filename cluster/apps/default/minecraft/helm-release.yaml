@@ -24,7 +24,7 @@ spec:
       # tag: 2022.10.0-java17
       tag: java11
     persistence:
-      dataDir:
+      data:
         existingClaim: minecraft-data
         enabled: true
         volumeName: pvc-e2b040fa-b9c7-4aec-95cf-66995053c5cc
@@ -62,7 +62,7 @@ spec:
 #       memory: 3Gi
 #       cpu: 2500m
     podAnnotations:
-      backup.velero.io/backup-volumes: datadir
+      backup.velero.io/backup-volumes: data
     extraEnv:
       ENABLE_AUTOPAUSE: FALSE
       #  SPIGET_RESOURCES: ""
