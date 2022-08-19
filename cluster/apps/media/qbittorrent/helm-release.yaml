@@ -102,7 +102,7 @@ spec:
     resources:
       requests:
         cpu: 3m
-        memory: 50Mi
+        memory: 60Mi
       limits:
         memory: 250Mi
         #
