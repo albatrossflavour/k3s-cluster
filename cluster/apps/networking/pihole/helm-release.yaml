@@ -69,9 +69,14 @@ spec:
           memory: 125Mi
         limits:
           memory: 250Mi
+
     dnsmasq:
-      upstreamServers: []
-      customDnsEntries: []
+      upstreamServers:
+        - "server=/lab.albatrossflavour.com/${METALLB_K8S_GATEWAY_ADDR}"
+
+      customDnsEntries:
+        - address=/udm.lab.albatrossflavour.com/192.168.1.1
+
       additionalHostsEntries: []
       staticDhcpEntries: []
       customSettings: []
