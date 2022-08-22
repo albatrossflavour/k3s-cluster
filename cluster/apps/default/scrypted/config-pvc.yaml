@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: scrypted-config
-  namespace: media
+  namespace: default
   labels:
     app.kubernetes.io/name: &name scrypted
     app.kubernetes.io/instance: *name
