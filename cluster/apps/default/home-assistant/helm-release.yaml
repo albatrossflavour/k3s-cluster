@@ -31,9 +31,9 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       PYTHONUSERBASE: /config/deps
-    envFrom:
-      - secretRef:
-          name: *app
+#   envFrom:
+#     - secretRef:
+#         name: *app
     service:
       main:
         type: LoadBalancer
