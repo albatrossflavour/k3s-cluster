@@ -42,6 +42,19 @@ spec:
       main:
         enabled: true
         ingressClassName: "nginx"
+        annotations:
+          nginx.ingress.kubernetes.io/auth-url: https://auth.${SECRET_DOMAIN}/oauth2/auth
+          nginx.ingress.kubernetes.io/auth-signin: https://auth.${SECRET_DOMAIN}/oauth2/start
+          nginx.ingress.kubernetes.io/satisfy: "any"
+          nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.0.0/16"
+          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "television"
+          hajimari.io/group: "Media"
+
         hosts:
           - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
             paths:
@@ -56,9 +69,9 @@ spec:
         existingClaim: node-red-config
         mountPath: "/data"
 
-#   resources:
-#     requests:
-#       cpu: 10m
-#       memory: 100Mi
-#     limits:
-#       memory: 500Mi
+    resources:
+      requests:
+        cpu: 10m
+        memory: 100Mi
+      limits:
+        memory: 500Mi
