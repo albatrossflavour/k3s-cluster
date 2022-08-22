@@ -28,7 +28,7 @@ spec:
       tag: v0.1.16
     env:
       TZ: "${TIMEZONE}"
-      SCRYPTED_SECURE_PORT: &port 80
+      SCRYPTED_INSECURE_PORT: &port 80
     service:
       main:
         ports:
