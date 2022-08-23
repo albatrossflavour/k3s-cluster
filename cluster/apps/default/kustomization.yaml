@@ -9,6 +9,7 @@ resources:
   - nginx
   - minecraft
   - velero
-  - node-red
+  # - node-red
   - scrypted
   - home-assistant
+  - mosquitto
