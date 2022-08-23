@@ -44,9 +44,7 @@ spec:
         protocol: TCP
         targetport: 1883
         annotations:
-          coredns.io/hostname: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          external-dns/is-public: "true"
+          name: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
 
 #   ingress:
 #     main:
