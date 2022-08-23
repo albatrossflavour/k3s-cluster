@@ -36,6 +36,7 @@ spec:
 
     service:
       mqtt:
+        enabled: true
         type: LoadBalancer
         externalIPs:
           - ${SVC_MOSQUITTO_ADDR}
