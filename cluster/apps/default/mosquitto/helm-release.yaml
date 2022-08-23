@@ -35,6 +35,7 @@ spec:
       TZ: "${TZ}"
 
     service:
+      type: LoadBalancer
       annotations:
         metallb.universe.tf/loadBalancerIPs:
           - "${SVC_MOSQUITTO_ADDR}"
