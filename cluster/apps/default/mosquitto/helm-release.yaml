@@ -78,6 +78,11 @@ spec:
         enabled: true
         existingClaim: mosquitto-data
 
+    podAnnotations:
+      backup.velero.io/backup-volumes:
+        - configinc
+        - data
+
     resources:
       requests:
         cpu: 15m
