@@ -46,8 +46,6 @@ spec:
         port: 1883
         protocol: TCP
         targetport: 1883
-        annotations:
-          name: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
 
 #   ingress:
 #     main:
