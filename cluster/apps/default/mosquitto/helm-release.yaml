@@ -35,23 +35,18 @@ spec:
       TZ: "${TZ}"
 
     service:
-      type: LoadBalancer
-      annotations:
-        metallb.universe.tf/loadBalancerIPs:
-          - "${SVC_MOSQUITTO_ADDR}"
-        externalTrafficPolicy: Local
-#     mqtt:
-#       enabled: true
-#       type: LoadBalancer
+      mqtt:
+        enabled: true
+        type: LoadBalancer
 #       externalIPs:
 #         - "${SVC_MOSQUITTO_ADDR}"
-#       externalTrafficPolicy: Local
-#       ports:
-#         mqtt:
-#           enabled: true
-#           port: 1883
-#           protocol: TCP
-#           targetport: 1883
+        externalTrafficPolicy: Local
+        ports:
+          mqtt:
+            enabled: true
+            port: 1883
+            protocol: TCP
+            targetport: 1883
 
     persistence:
       configinc:
