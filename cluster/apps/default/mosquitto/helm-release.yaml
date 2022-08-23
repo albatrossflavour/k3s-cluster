@@ -39,7 +39,7 @@ spec:
         type: LoadBalancer
         externalIPs:
           - ${SVC_MOSQUITTO_ADDR}
-        externalTrafficPolicy: LoadBalancer
+        externalTrafficPolicy: Local
         ports:
           mqtt:
             enabled: true
