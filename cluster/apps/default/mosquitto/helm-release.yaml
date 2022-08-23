@@ -41,6 +41,9 @@ spec:
 #       externalIPs:
 #         - "${SVC_MOSQUITTO_ADDR}"
         externalTrafficPolicy: Local
+        port: 1883
+        protocol: TCP
+        targetport: 1883
 
     persistence:
       configinc:
