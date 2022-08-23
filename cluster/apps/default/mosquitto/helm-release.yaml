@@ -35,11 +35,17 @@ spec:
       TZ: "${TZ}"
 
     service:
-      main:
+      mqtt:
         type: LoadBalancer
         externalIPs:
           - ${SVC_MOSQUITTO_ADDR}
-        externalTrafficPolicy: Local
+        externalTrafficPolicy: LoadBalancer
+        ports:
+          mqtt:
+            enabled: true
+            port: 1883
+            protocol: TCP
+            targetport: 1883
 
     persistence:
       configinc:
