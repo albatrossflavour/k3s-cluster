@@ -40,7 +40,7 @@ spec:
         type: LoadBalancer
         externalIPs:
           - "${SVC_HOME_ASSISTANT_ADDR}"
-        externalTrafficPolicy: Local
+        externalTrafficPolicy: LoadBalancer
         ports:
           http:
             port: 8123
