@@ -39,6 +39,8 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_MOSQUITTO_ADDR}"
+        externalIPs:
+          - "${SVC_MOSQUITTO_ADDR}"
         externalTrafficPolicy: Local
         port: 1883
         protocol: TCP
