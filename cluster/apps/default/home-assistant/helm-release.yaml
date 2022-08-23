@@ -56,10 +56,6 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "television"
-          hajimari.io/group: "Media"
-
         hosts:
           - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
             paths:
@@ -116,9 +112,6 @@ spec:
             cert-manager.io/cluster-issuer: "letsencrypt-production"
             external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
             external-dns/is-public: "true"
-            hajimari.io/enable: "true"
-            hajimari.io/icon: "television"
-            hajimari.io/group: "Media"
           hosts:
             - host: &host-release-code "{{ .Release.Name }}-code.lab.${SECRET_DOMAIN}"
               paths:
