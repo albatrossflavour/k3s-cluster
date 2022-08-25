@@ -11,4 +11,4 @@ resources:
   - unifi-poller
   - thanos
   - speedtest-exporter
-  - mqtt-exporter
+  # - mqtt-exporter
