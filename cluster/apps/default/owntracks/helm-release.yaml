@@ -22,10 +22,14 @@ spec:
       tag: 0.9.1
 
     env:
-      TZ: "${TZ}"
-      OTR_HOST: "${SVC_MOSQUITTO_ADDR}"
-      OTR_USER: "${MOSQUITTO_USER}"
-      OTR_PASS: "${MOSQUITTO_PASS}"
+      - name: "TZ"
+        value: ""
+      - name: "OTR_HOST"
+        value: ""
+      - name: "OTR_USER"
+        value: ""
+      - name: "OTR_PASS"
+        value: ""
 
     persistence:
       config:
