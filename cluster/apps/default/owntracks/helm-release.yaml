@@ -68,8 +68,7 @@ spec:
         existingClaim: owntracks-config
 
     podAnnotations:
-      backup.velero.io/backup-volumes:
-        - config
+      backup.velero.io/backup-volumes: config
 
     resources:
       requests:
