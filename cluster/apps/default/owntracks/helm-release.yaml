@@ -45,6 +45,7 @@ spec:
             port: 80
 
     ingress:
+      enabled: true
       main:
         enabled: true
         ingressClassName: "nginx"
