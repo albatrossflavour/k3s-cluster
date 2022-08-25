@@ -40,7 +40,6 @@ spec:
 
     service:
       main:
-        enabled: true
         ports:
           http:
             port: 80
@@ -59,8 +58,6 @@ spec:
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
           hajimari.io/enable: "true"
-          hajimari.io/icon: "television"
-          hajimari.io/group: "Media"
         hosts:
           - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
             paths:
