@@ -27,7 +27,8 @@ spec:
 
   values:
     image:
-      repository: owntracks
+      repository: owntracks/recorder
+
 
     env:
       TZ: "${TZ}"
