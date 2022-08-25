@@ -29,7 +29,6 @@ spec:
     image:
       repository: owntracks/recorder
 
-
     env:
       TZ: "${TZ}"
       OTR_HOST: "${SVC_MOSQUITTO_ADDR}"
