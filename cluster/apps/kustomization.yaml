@@ -8,4 +8,5 @@ resources:
   - networking
   - monitoring
   - media
+  - minecraft
   - system-upgrade

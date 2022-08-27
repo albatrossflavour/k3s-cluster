@@ -1,0 +1,88 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kalooma
+  namespace: minecraft
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://itzg.github.io/minecraft-server-charts/
+      chart: minecraft
+      version: 4.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: minecraft-server-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    nodeSelector:
+      name: minecraft
+    image:
+      repository: itzg/minecraft-server
+      # tag: 2022.10.0-java17
+      tag: java17
+    persistence:
+      data:
+        existingClaim: minecraft-data
+        enabled: true
+    service:
+      minecraft:
+        enabled: true
+        type: LoadBalancer
+        externalIPs:
+          - "${SVC_KALOOMA_ADDR}"
+        ports:
+          minecraft:
+            enabled: true
+            port: 25565
+            protocol: TCP
+            targetPort: 25565
+        externalTrafficPolicy: Local
+    livenessProbe:
+      initialDelaySeconds: 300
+      periodSeconds: 5
+      failureThreshold: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    readinessProbe:
+      initialDelaySeconds: 300
+      periodSeconds: 5
+      failureThreshold: 10
+      successThreshold: 1
+      timeoutSeconds: 1
+    startupProbe:
+      enabled: false
+      failureThreshold: 300
+      periodSeconds: 10
+#   resources:
+#     limits:
+#       memory: 3Gi
+#       cpu: 2500m
+    podAnnotations:
+      backup.velero.io/backup-volumes: data
+    extraEnv:
+      ENABLE_AUTOPAUSE: FALSE
+      #  SPIGET_RESOURCES: ""
+      MODS: "https://github.com/EssentialsX/Essentials/releases/download/2.19.4/EssentialsX-2.19.4.jar"
+    minecraftServer:
+      eula: "TRUE"
+      version: "1.19.2"
+      type: "SPIGOT"
+      forceReDownload: true
+      memory: 4096M
+      # jvmOpts: ""
+      jvmXXOpts: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1"
+      jvmOpts: ""
+      onlineMode: true
+      difficulty: default
+      maxTickTime: -1
+      servicePort: 25565
+      serviceType: LoadBalancer
+      gameMode: survival
+      motd: '\u00A7b\u00A7lThe Kalooma \u00A7esmp\: \u00A77[1.8-1.19] \n\u00A77\u00A7oNew Update Out Now\!'
+      # icon: 'https://static.planetminecraft.com/files/banner/887070_2.png'
+      ops: pdlfeggs
+      rcon:
+        enabled: false
