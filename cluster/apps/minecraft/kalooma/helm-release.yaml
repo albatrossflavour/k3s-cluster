@@ -17,8 +17,6 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    nodeSelector:
-      name: minecraft
     image:
       repository: itzg/minecraft-server
       # tag: 2022.10.0-java17
@@ -32,9 +30,9 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_KALOOMA_ADDR}"
-        port: 25565
+        port: 25564
         protocol: TCP
-        targetPort: 25565
+        targetPort: 25564
         externalTrafficPolicy: Local
     livenessProbe:
       initialDelaySeconds: 300
@@ -67,14 +65,14 @@ spec:
       version: "1.19.2"
       type: "SPIGOT"
       forceReDownload: true
-      memory: 4096M
+      memory: 2048M
       # jvmOpts: ""
       jvmXXOpts: "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 "
       jvmOpts: ""
       onlineMode: true
       difficulty: default
       maxTickTime: -1
-      servicePort: 25565
+      servicePort: 25564
       serviceType: LoadBalancer
       gameMode: survival
       motd: '\u00A7b\u00A7lThe Kalooma \u00A7esmp\: \u00A77[1.8-1.19] \n\u00A77\u00A7oNew Update Out Now\!'
