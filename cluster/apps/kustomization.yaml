@@ -9,4 +9,4 @@ resources:
   - monitoring
   - media
   - minecraft
-  - system-upgrade
+  # - system-upgrade
