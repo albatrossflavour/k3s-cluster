@@ -7,8 +7,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: ceph-block-long-term
+  storageClassName: ceph-block
   resources:
     requests:
       storage: 1G
-  volumeName: pvc-01e7cc39-3b57-4e78-abb9-b1ec2858e1fb

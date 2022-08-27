@@ -14,4 +14,4 @@ spec:
   resources:
     requests:
       storage: 50Gi
-  storageClassName: ceph-block-long-term
+  storageClassName: ceph-block
