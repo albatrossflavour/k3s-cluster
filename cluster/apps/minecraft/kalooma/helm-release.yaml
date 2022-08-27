@@ -31,8 +31,7 @@ spec:
       minecraft:
         enabled: true
         type: LoadBalancer
-        externalIPs:
-          - "${SVC_KALOOMA_ADDR}"
+        loadBalancerIP: "${SVC_KALOOMA_ADDR}"
         ports:
           minecraft:
             enabled: true
