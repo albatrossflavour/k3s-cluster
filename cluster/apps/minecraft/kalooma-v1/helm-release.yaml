@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kalooma
-  namespace: default
+  name: kalooma-v1
+  namespace: minecraft
 spec:
   interval: 5m
   chart:
@@ -27,13 +27,11 @@ spec:
       data:
         existingClaim: minecraft-data
         enabled: true
-        volumeName: pvc-e2b040fa-b9c7-4aec-95cf-66995053c5cc
     service:
       minecraft:
         enabled: true
         type: LoadBalancer
-        externalIPs:
-          - "${SVC_MINECRAFT_ADDR}"
+        loadBalancerIP: "${SVC_MINECRAFT_ADDR}"
         ports:
           minecraft:
             enabled: true

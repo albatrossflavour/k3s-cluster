@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: owntracks-config
-  namespace: default
+  name: node-red-config
+  namespace: home
   labels:
-    app.kubernetes.io/name: &name owntracks
+    app.kubernetes.io/name: &name node-red
     app.kubernetes.io/instance: *name
     policy.home.arpa/snapshot: "true"
 spec:
@@ -13,5 +13,5 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 1Gi
   storageClassName: ceph-block

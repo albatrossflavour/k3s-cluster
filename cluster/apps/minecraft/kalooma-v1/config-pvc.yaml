@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: minecraft-data
-  namespace: default
+  name: kalooma-v1-data
+  namespace: minecraft
 spec:
   accessModes:
     - ReadWriteOnce

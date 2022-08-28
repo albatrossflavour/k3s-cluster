@@ -2,16 +2,16 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: scrypted-config
-  namespace: default
+  name: owntracks-config
+  namespace: home
   labels:
-    app.kubernetes.io/name: &name scrypted
+    app.kubernetes.io/name: &name owntracks
     app.kubernetes.io/instance: *name
-    snapshot.home.arpa/enabled: "true"
+    policy.home.arpa/snapshot: "true"
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 50Gi
+      storage: 10Gi
   storageClassName: ceph-block
