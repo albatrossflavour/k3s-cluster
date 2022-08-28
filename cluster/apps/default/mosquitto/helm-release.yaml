@@ -77,9 +77,9 @@ spec:
         existingClaim: mosquitto-data
 
     podAnnotations:
-      backup.velero.io/backup-volumes:
-        - configinc
-        - data
+      backup.velero.io/backup-volumes: configinc
+#       - configinc
+#       - data
 
     resources:
       requests:
