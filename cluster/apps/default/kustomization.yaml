@@ -12,4 +12,4 @@ resources:
   - scrypted
   - home-assistant
   - mosquitto
-  - owntracks
+  # - owntracks
