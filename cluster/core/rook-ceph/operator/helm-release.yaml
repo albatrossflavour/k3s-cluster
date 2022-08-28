@@ -25,7 +25,7 @@ spec:
     crds:
       enabled: false
     monitoring:
-      enabled: true
+      enabled: false # FIX
     resources:
       requests:
         cpu: 10m
