@@ -9,4 +9,4 @@ resources:
   - metallb
   - k8s-gateway
   - oauth2-proxy
-  - pihole
+  # - pihole
