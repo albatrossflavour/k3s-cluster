@@ -230,7 +230,7 @@ spec:
             key: objstore.yml
         resources:
           requests:
-            cpu: 100m
+            cpu: 80m
             memory: 3000Mi
           limits:
             memory: 7000Mi
