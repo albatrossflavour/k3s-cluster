@@ -74,55 +74,57 @@ spec:
           - name: k8s-2
             devices:
               - name: "/dev/disk/by-id/scsi-SSamsung_Portable_SSD_T5_F2BB28654321"
+
+
       resources:
         mgr:
           limits:
             memory: "1Gi"
           requests:
-            cpu: "150m"
-            memory: "256Mi"
+            cpu: "500m"
+            memory: "512Mi"
         mon:
           limits:
-            memory: "1Gi"
+            memory: "2Gi"
           requests:
-            cpu: "500m"
-            memory: "250Mi"
+            cpu: "1000m"
+            memory: "1Gi"
         osd:
           limits:
             memory: "4Gi"
           requests:
-            cpu: "500m"
-            memory: "2Gi"
+            cpu: "1000m"
+            memory: "4Gi"
         prepareosd:
           limits:
-            memory: "200Mi"
+            memory: "400Mi"
           requests:
-            cpu: "150m"
-            memory: "25Mi"
+            cpu: "500m"
+            memory: "50Mi"
         mgr-sidecar:
           limits:
-            memory: "50Mi"
+            memory: "100Mi"
           requests:
-            cpu: "50m"
-            memory: "20Mi"
+            cpu: "100m"
+            memory: "40Mi"
         crashcollector:
           limits:
-            memory: "30Mi"
+            memory: "60Mi"
           requests:
-            cpu: "50m"
-            memory: "30Mi"
+            cpu: "100m"
+            memory: "60Mi"
         logcollector:
           limits:
-            memory: "250Mi"
+            memory: "1Gi"
           requests:
-            cpu: "50m"
-            memory: "50Mi"
+            cpu: "100m"
+            memory: "100Mi"
         cleanup:
           limits:
-            memory: "250Mi"
+            memory: "1Gi"
           requests:
-            cpu: "150m"
-            memory: "50Mi"
+            cpu: "500m"
+            memory: "100Mi"
 #   cephBlockPoolsVolumeSnapshotClass:
 #     enabled: true
 #     name: csi-rbdplugin-snapclass
