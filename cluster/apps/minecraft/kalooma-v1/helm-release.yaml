@@ -25,7 +25,7 @@ spec:
       tag: java11
     persistence:
       data:
-        existingClaim: minecraft-data
+        existingClaim: kalooma-v1-data
         enabled: true
     service:
       minecraft:

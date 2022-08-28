@@ -23,7 +23,7 @@ spec:
       tag: java17
     persistence:
       data:
-        existingClaim: minecraft-data
+        existingClaim: kalooma-data
         enabled: true
     service:
       main:
