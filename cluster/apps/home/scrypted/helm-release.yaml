@@ -67,3 +67,10 @@ spec:
       backup.velero.io/backup-volumes: config
     hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
+    resources:
+      requests:
+        cpu: 10m
+        memory: 100Mi
+      limits:
+        cpu: 150m
+        memory: 750Mi
