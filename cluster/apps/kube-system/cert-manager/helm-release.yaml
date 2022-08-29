@@ -38,5 +38,5 @@ spec:
     prometheus:
       enabled: true
       servicemonitor:
-        enabled: false # FIX
+        enabled: true
         prometheusInstance: monitoring
