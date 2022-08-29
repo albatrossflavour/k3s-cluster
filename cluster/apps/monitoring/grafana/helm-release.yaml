@@ -82,6 +82,9 @@ spec:
             #   url: http://loki-gateway:80
     dashboards:
       default:
+        home:
+          url: https://raw.githubusercontent.com/albatrossflavour/k3s-cluster/master/cluster/apps/monitoring/grafana/dashboards/home.json
+          datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/7845
         speedtest-exporter:
           url: https://raw.githubusercontent.com/filipweilid/k3s-homelab/master/cluster/apps/monitoring/grafana/dashboards/speedtest-exporter.json
