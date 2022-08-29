@@ -22,3 +22,4 @@ resources:
   - oauth2-proxy.yaml
   - kubernetes-dashboard.yaml
   - albatrossflavour.yaml
+  - bjw-s.yaml

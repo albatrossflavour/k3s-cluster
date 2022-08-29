@@ -12,3 +12,4 @@ resources:
   - jackett
   - ombi  # FIXME - not working likely due to using the linuxserver image
   - flaresolverr
+  - overseerr
