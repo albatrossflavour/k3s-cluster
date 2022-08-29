@@ -52,9 +52,19 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: "ombi.lab.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: "ombi.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - *host
+              - "ombi.lab.${SECRET_DOMAIN}"
+              - "ombi.${SECRET_DOMAIN}"
             secretName: *app
 
     persistence:
