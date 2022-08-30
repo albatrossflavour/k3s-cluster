@@ -40,7 +40,7 @@ spec:
             port: 1880
     ingress:
       main:
-        enabled: true
+        enabled: false
         ingressClassName: "nginx"
         annotations:
           nginx.ingress.kubernetes.io/auth-url: https://auth.${SECRET_DOMAIN}/oauth2/auth
