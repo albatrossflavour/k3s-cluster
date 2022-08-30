@@ -25,6 +25,7 @@ spec:
   values:
     priorityClassName: high-priority
     alertmanager:
+      enabled: true
       config:
         global:
           resolve_timeout: 5m
