@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/home-assistant
-      tag: 2022.7.6@sha256:68c75a576eafad64999338550a497386a57d3def6ed9c6b5ad26be8683dd5608
+      tag: 2022.8.7@sha256:0bacc45203340df0a2ef000261ace0d788c4dc906ace33e7cea7d764a1186c23
     env:
       TZ: "${TIMEZONE}"
       PYTHONUSERBASE: /config/deps
