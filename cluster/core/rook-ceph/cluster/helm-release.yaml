@@ -55,6 +55,8 @@ spec:
         provider: host
       crashCollector:
         disable: false
+      toolbox:
+        enabled: true
       dashboard:
         enabled: true
         urlPrefix: /
