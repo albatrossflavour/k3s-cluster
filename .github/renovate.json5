@@ -96,12 +96,14 @@
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["minor"],
-      "labels": ["renovate/helm", "dep/minor"]
+      "labels": ["renovate/helm", "dep/minor"],
+      "automerge": true
     },
     {
       "matchDatasources": ["helm"],
       "matchUpdateTypes": ["patch"],
-      "labels": ["renovate/helm", "dep/patch"]
+      "labels": ["renovate/helm", "dep/patch"],
+      "automerge": true
     }
   ]
 }
