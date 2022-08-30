@@ -51,7 +51,8 @@
     {
       "matchDatasources": ["helm"],
       "separateMinorPatch": true,
-      "ignoreDeprecated": true
+      "ignoreDeprecated": true,
+      "automerge": true
     },
     // global docker datasource settings
     {
