@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: &app node-red
-  namespace: default
+  namespace: home
 spec:
   interval: 15m
   chart:
@@ -58,7 +58,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: node-red-config-v1
+        existingClaim: node-red-config
         mountPath: "/data"
     resources:
       requests:
