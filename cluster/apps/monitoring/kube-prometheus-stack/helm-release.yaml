@@ -199,6 +199,7 @@ spec:
             secretName: *host
       prometheusSpec:
         replicas: 1
+        priorityClassName: high-priority
         replicaExternalLabelName: __replica__
         externalLabels:
           cluster: k3s-cluster
