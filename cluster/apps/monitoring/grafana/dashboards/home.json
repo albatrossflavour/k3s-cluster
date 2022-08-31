@@ -259,6 +259,18 @@
           "legendFormat": "{{topic}}",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "zigbee2mqtt_humidity",
+          "hide": false,
+          "legendFormat": "{{topic}}",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Humidity",
@@ -282,7 +294,7 @@
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
