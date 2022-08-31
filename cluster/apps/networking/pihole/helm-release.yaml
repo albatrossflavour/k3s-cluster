@@ -79,6 +79,8 @@ spec:
         - address=/k8s-0.lab.albatrossflavour.com/192.168.2.50
         - address=/k8s-1.lab.albatrossflavour.com/192.168.2.51
         - address=/k8s-2.lab.albatrossflavour.com/192.168.2.52
+        - address=/k8s-3.lab.albatrossflavour.com/192.168.2.53
+        - address=/k8s-4.lab.albatrossflavour.com/192.168.2.54
         - address=/pihole.lab.albatrossflavour.com/192.168.2.3
         - address=/mosquitto.lab.albatrossflavour.com/192.168.2.246
 
