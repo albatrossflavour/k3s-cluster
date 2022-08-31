@@ -68,6 +68,9 @@ spec:
       supplementalGroups:
         - 100
 
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
+
     resources:
       requests:
         cpu: 15m
