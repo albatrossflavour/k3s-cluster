@@ -24,7 +24,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 45,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -39,6 +38,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -109,6 +110,7 @@
           ],
           "displayMode": "table",
           "placement": "bottom",
+          "showLegend": true,
           "sortBy": "Last *",
           "sortDesc": true
         },
@@ -124,12 +126,23 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "builder",
-          "expr": "mqtt_temperature",
-          "instant": true,
-          "key": "Q-58b673e0-2ace-4947-bc12-9ec7e9565eb9-0",
+          "expr": "zigbee2mqtt_temperature",
+          "hide": false,
           "legendFormat": "{{topic}}",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "mqtt_temperature",
+          "hide": false,
+          "legendFormat": "{{topic}}",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Temperature",
@@ -155,6 +168,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -224,7 +239,8 @@
             "lastNotNull"
           ],
           "displayMode": "table",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -243,6 +259,18 @@
           "legendFormat": "{{topic}}",
           "range": true,
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "zigbee2mqtt_humidity",
+          "hide": false,
+          "legendFormat": "{{topic}}",
+          "range": true,
+          "refId": "B"
         }
       ],
       "title": "Humidity",
@@ -259,20 +287,20 @@
     }
   ],
   "refresh": "1m",
-  "schemaVersion": 36,
+  "schemaVersion": 37,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": []
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Home",
   "uid": "pIG2JDZ4k",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }

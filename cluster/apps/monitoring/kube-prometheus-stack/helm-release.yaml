@@ -9,13 +9,12 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: 39.6.0
+      version: 39.11.0
       sourceRef:
         kind: HelmRepository
         name: prometheus-community-charts
         namespace: flux-system
       interval: 15m
-  priorityClassName: high-priority 
   install:
     createNamespace: true
     remediation:
@@ -24,7 +23,9 @@ spec:
     remediation:
       retries: 5
   values:
+    priorityClassName: high-priority
     alertmanager:
+      enabled: true
       config:
         global:
           resolve_timeout: 5m
@@ -98,11 +99,13 @@ spec:
         ingressClassName: "nginx"
         external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         external-dns/is-public: "true"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         hosts:
           - &host "alert-manager.lab.${SECRET_DOMAIN}"
         tls:
           - hosts:
               - *host
+            secretName: *host
       alertmanagerSpec:
         replicas: 3
         podAntiAffinity: hard
@@ -177,6 +180,7 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         hosts:
           - &host "prometheus.lab.${SECRET_DOMAIN}"
         tls:
@@ -190,6 +194,7 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
         annotations:
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
@@ -201,6 +206,7 @@ spec:
             secretName: *host
       prometheusSpec:
         replicas: 1
+        priorityClassName: high-priority
         replicaExternalLabelName: __replica__
         externalLabels:
           cluster: k3s-cluster
@@ -225,9 +231,9 @@ spec:
                 requests:
                   storage: 20Gi
         thanos:
-          image: quay.io/thanos/thanos:v0.27.0
+          image: quay.io/thanos/thanos:v0.28.0
           # renovate: datasource=docker depName=quay.io/thanos/thanos
-          version: "v0.27.0"
+          version: "v0.28.0"
           objectStorageConfig:
             name: thanos-objstore-secret
             key: objstore.yml
@@ -251,7 +257,7 @@ spec:
             honor_timestamps: true
             static_configs:
               - targets:
-                  - "192.168.1.22:9009"
+                  - "zigbee2mqtt-exporter"
 #         - job_name: frr-exporter
 #           scrape_interval: 1m
 #           scrape_timeout: 10s

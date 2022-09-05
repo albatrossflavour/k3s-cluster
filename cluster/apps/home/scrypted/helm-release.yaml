@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: scrypted
-      version: 0.3.0
+      version: 0.3.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -25,7 +25,7 @@ spec:
   values:
     image:
       repository: koush/scrypted
-      tag: v0.1.16
+      tag: v0.2.2
     env:
       TZ: "${TIMEZONE}"
       SCRYPTED_INSECURE_PORT: &port 80
