@@ -9,5 +9,5 @@ resources:
   - networking
   - monitoring
   - media
-  - minecraft
+  # - minecraft
   # - system-upgrade
