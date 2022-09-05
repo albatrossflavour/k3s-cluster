@@ -103,6 +103,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: *host
       alertmanagerSpec:
         replicas: 3
         podAntiAffinity: hard
