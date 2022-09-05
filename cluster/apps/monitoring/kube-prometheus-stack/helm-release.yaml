@@ -96,6 +96,8 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns/is-public: "true"
         hosts:
           - &host "alert-manager.lab.${SECRET_DOMAIN}"
         tls:
