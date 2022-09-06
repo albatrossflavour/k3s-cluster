@@ -107,7 +107,7 @@ spec:
               - *host
             secretName: *host
       alertmanagerSpec:
-        replicas: 3
+        replicas: 1
         podAntiAffinity: hard
         storage:
           volumeClaimTemplate:
