@@ -83,6 +83,8 @@ spec:
         - address=/k8s-4.lab.albatrossflavour.com/192.168.2.54
         - address=/pihole.lab.albatrossflavour.com/192.168.2.3
         - address=/mosquitto.lab.albatrossflavour.com/192.168.2.246
+        - address=/betty.albatrossflavour.com/10.10.20.208
+        - address=/conbee.lab.albatrossflavour.com/10.10.20.57
 
       additionalHostsEntries: []
       staticDhcpEntries: []
