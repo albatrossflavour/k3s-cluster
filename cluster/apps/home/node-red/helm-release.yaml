@@ -55,6 +55,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: *app
     persistence:
       config:
         enabled: true
