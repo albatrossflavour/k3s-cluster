@@ -63,11 +63,11 @@ spec:
             secretName: *app
     probes:
       liveness:
-        enabled: false
+        enabled: true
       readiness:
-        enabled: false
+        enabled: true
       startup:
-        enabled: false
+        enabled: true
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
@@ -75,6 +75,7 @@ spec:
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 100
+    dnsPolicy: ClusterFirstWithHostNet
     persistence:
       config:
         enabled: true
