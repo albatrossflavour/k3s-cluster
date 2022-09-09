@@ -85,6 +85,9 @@ spec:
         home:
           url: https://raw.githubusercontent.com/albatrossflavour/k3s-cluster/master/cluster/apps/monitoring/grafana/dashboards/home.json
           datasource: Prometheus
+        nodes:
+          url: https://raw.githubusercontent.com/albatrossflavour/k3s-cluster/master/cluster/apps/monitoring/grafana/dashboards/nodes.json
+          datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/7845
         speedtest-exporter:
           url: https://raw.githubusercontent.com/filipweilid/k3s-homelab/master/cluster/apps/monitoring/grafana/dashboards/speedtest-exporter.json
