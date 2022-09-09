@@ -72,6 +72,8 @@
       },
       "hiddenSeries": false,
       "id": 2,
+      "interval": "1m",
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -163,6 +165,7 @@
       },
       "hiddenSeries": false,
       "id": 3,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -308,6 +311,7 @@
       },
       "hiddenSeries": false,
       "id": 4,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -518,6 +522,7 @@
       },
       "hiddenSeries": false,
       "id": 6,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -895,6 +900,7 @@
       },
       "hiddenSeries": false,
       "id": 8,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
@@ -984,6 +990,7 @@
       },
       "hiddenSeries": false,
       "id": 9,
+      "interval": "1m",
       "legend": {
         "alignAsTable": false,
         "avg": false,
