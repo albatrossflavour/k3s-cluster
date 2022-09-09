@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "id": 46,
+  "id": 6,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -60,6 +60,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 1,
@@ -72,7 +73,6 @@
       },
       "hiddenSeries": false,
       "id": 2,
-      "interval": "1m",
       "interval": "1m",
       "legend": {
         "alignAsTable": false,
@@ -153,6 +153,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 0,
@@ -299,6 +300,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 1,
@@ -415,6 +417,7 @@
     },
     {
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fieldConfig": {
@@ -450,6 +453,7 @@
         "y": 9
       },
       "id": 5,
+      "interval": "1m",
       "options": {
         "orientation": "auto",
         "reduceOptions": {
@@ -510,6 +514,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 0,
@@ -564,30 +569,36 @@
           "datasource": {
             "uid": "$datasource"
           },
+          "editorMode": "code",
           "expr": "rate(node_disk_read_bytes_total{instance=\"$instance\", device=~\"(/dev/)?(mmcblk.p.+|nvme.+|rbd.+|sd.+|vd.+|xvd.+|dm-.+|dasd.+)\"}[$__rate_interval])",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{device}} read",
+          "range": true,
           "refId": "A"
         },
         {
           "datasource": {
             "uid": "$datasource"
           },
+          "editorMode": "code",
           "expr": "rate(node_disk_written_bytes_total{instance=\"$instance\", device=~\"(/dev/)?(mmcblk.p.+|nvme.+|rbd.+|sd.+|vd.+|xvd.+|dm-.+|dasd.+)\"}[$__rate_interval])",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{device}} written",
+          "range": true,
           "refId": "B"
         },
         {
           "datasource": {
             "uid": "$datasource"
           },
+          "editorMode": "code",
           "expr": "rate(node_disk_io_time_seconds_total{instance=\"$instance\", device=~\"(/dev/)?(mmcblk.p.+|nvme.+|rbd.+|sd.+|vd.+|xvd.+|dm-.+|dasd.+)\"}[$__rate_interval])",
           "format": "time_series",
           "intervalFactor": 2,
           "legendFormat": "{{device}} io time",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -623,6 +634,7 @@
     },
     {
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fieldConfig": {
@@ -734,6 +746,7 @@
         "y": 17
       },
       "id": 7,
+      "interval": "1m",
       "options": {
         "footer": {
           "fields": "",
@@ -750,6 +763,7 @@
           "datasource": {
             "uid": "$datasource"
           },
+          "editorMode": "code",
           "expr": "max by (mountpoint) (node_filesystem_size_bytes{instance=\"$instance\", fstype!=\"\"})\n",
           "format": "table",
           "instant": true,
@@ -888,6 +902,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 0,
@@ -978,6 +993,7 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": {
+        "type": "prometheus",
         "uid": "$datasource"
       },
       "fill": 0,
