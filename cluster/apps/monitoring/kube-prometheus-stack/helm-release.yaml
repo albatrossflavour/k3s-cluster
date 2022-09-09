@@ -247,14 +247,14 @@ spec:
             memory: 7000Mi
         additionalScrapeConfigs:
           - job_name: kilns
-            scrape_interval: 15s
+            scrape_interval: 1m
             scrape_timeout: 10s
             honor_timestamps: true
             static_configs:
               - targets:
                   - "10.10.20.208"
           - job_name: extra-nodes
-            scrape_interval: 15s
+            scrape_interval: 1m
             scrape_timeout: 10s
             honor_timestamps: true
             static_configs:
