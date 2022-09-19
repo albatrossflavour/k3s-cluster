@@ -41,7 +41,7 @@ spec:
       config:
         enabled: true
         existingClaim: pihole-data
-    adminPassword: "admin"
+    adminPassword: "${PIHOLE_PASS}"
     ingress:
       enabled: true
       ingressClassName: nginx
