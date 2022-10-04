@@ -23,8 +23,6 @@ spec:
     remediation:
       retries: 5
   values:
-    nodeSelector:
-      name: scrypted
     image:
       repository: koush/scrypted
       tag: v0.2.9
