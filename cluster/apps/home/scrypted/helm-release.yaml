@@ -32,6 +32,8 @@ spec:
                   operator: In
                   values:
                     - rook-ceph-rgw
+            namespaces:
+              - rook-ceph
             topologyKey: "kubernetes.io/hostname"
     image:
       repository: koush/scrypted
