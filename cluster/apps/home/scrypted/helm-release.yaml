@@ -5,6 +5,16 @@ metadata:
   name: &app scrypted
   namespace: home
 spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - rook-ceph-rgw
+          topologyKey: "kubernetes.io/hostname"
   interval: 15m
   chart:
     spec:
