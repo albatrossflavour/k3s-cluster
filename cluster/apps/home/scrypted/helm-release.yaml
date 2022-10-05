@@ -8,16 +8,6 @@ spec:
   interval: 15m
   chart:
     spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: app
-                    operator: In
-                    values:
-                      - rook-ceph-rgw
-              topologyKey: "kubernetes.io/hostname"
       chart: scrypted
       version: 0.3.2
       sourceRef:
@@ -33,6 +23,16 @@ spec:
     remediation:
       retries: 5
   values:
+    affinity:
+      podAntiAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                    - rook-ceph-rgw
+            topologyKey: "kubernetes.io/hostname"
     image:
       repository: koush/scrypted
       tag: v0.2.9
