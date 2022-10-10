@@ -40,4 +40,4 @@ spec:
           params:
             nodeResourceUtilizationThresholds:
               thresholds:
-                "pods": 35
+                "pods": 60
