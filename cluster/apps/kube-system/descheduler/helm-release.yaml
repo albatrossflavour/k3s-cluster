@@ -20,6 +20,8 @@ spec:
     createNamespace: true
   values:
     kind: Deployment
+    rbac:
+      create: true
     deschedulerPolicy:
       strategies:
         RemoveDuplicates:
