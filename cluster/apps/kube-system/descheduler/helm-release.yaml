@@ -35,9 +35,9 @@ spec:
           enabled: true
         LowNodeUtilization:
           enabled: true
-        HighNodeUtilization:
-          enabled: true
           params:
             nodeResourceUtilizationThresholds:
               thresholds:
-                "pods": 99
+                "pods": 70
+              targetThresholds:
+                "pods": 50
