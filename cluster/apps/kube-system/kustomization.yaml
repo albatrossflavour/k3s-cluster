@@ -10,3 +10,4 @@ resources:
   - reloader
   - kube-vip
   - kubernetes-dashboard
+  - descheduler
