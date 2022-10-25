@@ -102,7 +102,7 @@ spec:
         type: emptyDir
     resources:
       requests:
-        cpu: 3m
+        cpu: 6m
         memory: 200Mi
       limits:
-        memory: 500Mi
+        memory: 900Mi
