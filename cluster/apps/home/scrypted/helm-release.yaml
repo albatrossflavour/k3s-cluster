@@ -37,7 +37,7 @@ spec:
             topologyKey: "kubernetes.io/hostname"
     image:
       repository: koush/scrypted
-      tag: v0.3.6
+      tag: v0.3.8
     env:
       TZ: "${TIMEZONE}"
       SCRYPTED_INSECURE_PORT: &port 80
