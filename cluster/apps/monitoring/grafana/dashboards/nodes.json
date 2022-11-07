@@ -1113,7 +1113,7 @@
           "type": "prometheus",
           "uid": "$datasource"
         },
-        "definition": "label_values(node_uname_info{sysname!=\"Darwin\"}, instance)",
+        "definition": "label_values(node_uname_info{}, instance)",
         "hide": 0,
         "includeAll": false,
         "label": "Instance",
@@ -1121,7 +1121,7 @@
         "name": "instance",
         "options": [],
         "query": {
-          "query": "label_values(node_uname_info{sysname!=\"Darwin\"}, instance)",
+          "query": "label_values(node_uname_info{}, instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 2,
