@@ -10,5 +10,5 @@ collections:
     version: 2.8.0
 roles:
   - src: xanmanning.k3s
-    version: v2.10.6
+    version: v2.12.1
     # version: v3.3.1
