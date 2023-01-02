@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - kalooma
-  - kalooma-v1
+  #  - kalooma-v1

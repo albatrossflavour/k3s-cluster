@@ -58,12 +58,11 @@ spec:
       backup.velero.io/backup-volumes: data
     extraEnv:
       ENABLE_AUTOPAUSE: FALSE
-      #  SPIGET_RESOURCES: ""
       MODS: "https://github.com/EssentialsX/Essentials/releases/download/2.19.7/EssentialsX-2.19.7.jar"
     minecraftServer:
       eula: "TRUE"
       version: "1.19.2"
-      type: "SPIGOT"
+      type: "PAPER"
       forceReDownload: true
       memory: 1500M
       # jvmOpts: ""
