@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: ghcr.io/onedr0p/sonarr-develop
-      tag: 4.0.0.314@sha256:aa0ec57a1504138c32999a32c381b742fb3c8e87785d6e07dd33d850859de375
+      tag: 4.0.0.328@sha256:8c0ff01a11ccf1149252cdf26fca1a50b2e6debdd9515adfdef36e3c052f89ec
     env:
       TZ: "${TIMEZONE}"
       SONARR__INSTANCE_NAME: Sonarr
