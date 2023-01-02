@@ -29,7 +29,7 @@ spec:
       main:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: "${SVC_KALOOMA_ADDR}"
+        loadBalancerIP: "${SVC_MINECRAFT_ADDR}"
         port: 25564
         protocol: TCP
         targetPort: 25564
