@@ -26,14 +26,25 @@ spec:
         existingClaim: kalooma-data
         enabled: true
     service:
-      main:
+      minecraft:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_MINECRAFT_ADDR}"
-        port: 25564
-        protocol: TCP
-        targetPort: 25564
+        ports:
+          minecraft:
+            enabled: true
+            port: 25565
+            protocol: TCP
+            targetPort: 25565
         externalTrafficPolicy: Local
+#     main:
+#       enabled: true
+#       type: LoadBalancer
+#       loadBalancerIP: "${SVC_MINECRAFT_ADDR}"
+#       port: 25564
+#       protocol: TCP
+#       targetPort: 25564
+#       externalTrafficPolicy: Local
     livenessProbe:
       initialDelaySeconds: 300
       periodSeconds: 5
