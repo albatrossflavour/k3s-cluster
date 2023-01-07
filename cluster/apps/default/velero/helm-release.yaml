@@ -64,9 +64,9 @@ spec:
         enabled: true
     backupsEnabled: true
     snapshotsEnabled: true
-    deployRestic: true
+    deployNodeAgent: true
     upgradeCRDs: true
-    restic:
+    nodeAgent:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
       tolerations:
