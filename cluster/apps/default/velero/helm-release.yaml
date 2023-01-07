@@ -11,7 +11,7 @@ spec:
     spec:
       # renovate: registryUrl=https://vmware-tanzu.github.io/helm-charts
       chart: velero
-      version: 3.0.0
+      version: 2.32.6
       sourceRef:
         kind: HelmRepository
         name: vmware-tanzu
@@ -64,9 +64,9 @@ spec:
         enabled: true
     backupsEnabled: true
     snapshotsEnabled: true
-    deployNodeAgent: true
+    deployRestic: true
     upgradeCRDs: true
-    nodeAgent:
+    restic:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
       tolerations:
