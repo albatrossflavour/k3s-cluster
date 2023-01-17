@@ -81,7 +81,7 @@ spec:
     dnsPolicy: ClusterFirstWithHostNet
     resources:
       requests:
-        cpu: 25m
+        cpu: 15m
         memory: 200Mi
       limits:
-        memory: 950Mi
+        memory: 1950Mi
