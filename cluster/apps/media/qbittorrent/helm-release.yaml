@@ -104,5 +104,3 @@ spec:
         memory: 60Mi
       limits:
         memory: 250Mi
-        #
-        #
