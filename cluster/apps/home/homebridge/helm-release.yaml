@@ -34,6 +34,8 @@ spec:
         ports:
           http:
             port: &port 8581
+          webhook:
+            port: 22987
     hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
     persistence:
@@ -55,6 +57,7 @@ spec:
           startup.sh: |-
             #!/bin/sh
             npm install --save homebridge-dummy@latest
+            npm install --save homebridge-ws@latest
             npm install --save homebridge-wemo@latest
             npm install --save homebridge-plex-sensors@latest
             npm install --save homebridge-wemoirrigation@latest
