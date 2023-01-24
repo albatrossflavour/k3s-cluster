@@ -55,11 +55,15 @@ spec:
           startup.sh: |-
             #!/bin/sh
             npm install --save homebridge-dummy@latest
-            npm install --save homebridge-myq@latest
-            npm install --save homebridge-nest@latest
-            npm install --save homebridge-orbit-irrigation@latest
-            npm install --save homebridge-tplink-smarthome@latest
-            npm install --save -g homebridge-camera-ui@latest
+            npm install --save homebridge-wemo@latest
+            npm install --save homebridge-plex-sensors@latest
+            npm install --save homebridge-wemoirrigation@latest
+            npm install --save homebridge-button-platform@latest
+            npm install --save homebridge-tuya-web@latest
+            npm install --save homebridge-z2m@latest
+            npm install --save homebridge-programmable-http-switch@latest
+            npm install --save homebridge-meross@latest
+            npm install --save homebridge-airvisual-2@latest
     ingress:
       main:
         enabled: true
