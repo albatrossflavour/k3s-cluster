@@ -95,11 +95,11 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-          - host: kalooma.org
+          - host: toodlepip.com.au
             paths:
               - path: /
                 pathType: Prefix
-          - host: www.kalooma.org
+          - host: www.toodlepipe.com.au
             paths:
               - path: /
                 pathType: Prefix
