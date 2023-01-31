@@ -21,3 +21,4 @@ spec:
             - ${SECRET_DOMAIN}
             - toodlepip.com.au
             - bandcamp.tv
+            - kalooma.org
