@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: nginx
-      version: 13.2.21
+      version: 13.2.22
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -48,6 +48,12 @@ spec:
         return 301 $scheme://www.etsy.com/au/shop/ToodlepipdesignsAU;
       }
 
+      server {
+        listen 8080;
+        server_name www.kalooma.org kalooma.org;
+        return 301 $scheme://youtube.com/pdlfeggs;
+      }
+
 #   extraVolumes:
 #     - name: nginx-docs
 #       persistentVolumeClaim:
@@ -60,6 +66,10 @@ spec:
     ingress:
       hostname: "/*"
       extraHosts:
+        - name: www.kalooma.org
+          path: /
+        - name: kalooma.org
+          path: /
         - name: toodlepip.com.au
           path: /
         - name: banddcamp.tv
@@ -77,11 +87,19 @@ spec:
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
         hosts:
+          - host: www.kalooma.org
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: www.kalooma.org
+            paths:
+              - path: /
+                pathType: Prefix
           - host: toodlepip.com.au
             paths:
               - path: /
                 pathType: Prefix
-          - host: www.toodlepip.com.au
+          - host: www.toodlepipe.com.au
             paths:
               - path: /
                 pathType: Prefix
@@ -95,6 +113,8 @@ spec:
                 pathType: Prefix
         tls:
           - hosts:
+              - kalooma.org
+              - www.kalooma.org
               - toodlepip.com.au
               - www.toodlepip.com.au
               - bandcamp.tv
