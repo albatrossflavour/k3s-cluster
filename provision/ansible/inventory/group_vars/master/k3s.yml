@@ -33,11 +33,15 @@ k3s_server:
   kubelet-arg:
     # Allow k8s services to contain TCP and UDP on the same port
     - "feature-gates=MixedProtocolLBService=true"
+    - "node-status-update-frequency=4s"
   kube-controller-manager-arg:
     # Allow k8s services to contain TCP and UDP on the same port
     - "feature-gates=MixedProtocolLBService=true"
     # Required to monitor kube-controller-manager with kube-prometheus-stack
     - "bind-address=0.0.0.0"
+    - "node-monitor-period=4s"
+    - "node-monitor-grace-period=16s"
+    - "pod-eviction-timeout=20s"
   kube-proxy-arg:
     # Allow k8s services to contain TCP and UDP on the same port
     - "feature-gates=MixedProtocolLBService=true"
@@ -55,3 +59,5 @@ k3s_server:
     - "feature-gates=MixedProtocolLBService=true"
     # Required for HAProxy health-checks
     - "anonymous-auth=true"
+    - "default-not-ready-toleration-seconds=20"
+    - "default-unreachable-toleration-seconds=20"
