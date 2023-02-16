@@ -26,7 +26,7 @@ spec:
     replicas: 1
     image:
       repository: pihole/pihole
-      tag: "2022.12"
+      tag: "2022.02.2"
     serviceWeb:
       loadBalancerIP: "192.168.2.250"
       annotations:
@@ -94,7 +94,6 @@ spec:
       customCnameEntries: []
 
     adlists:
-      - https://hosts-file.net/grm.txt
       - https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
       - https://adaway.org/hosts.txt
       - https://v.firebog.net/hosts/Easyprivacy.txt
