@@ -26,7 +26,7 @@ spec:
     replicas: 1
     image:
       repository: pihole/pihole
-      tag: "2022.02.2"
+      tag: "2022.12"
     serviceWeb:
       loadBalancerIP: "192.168.2.250"
       annotations:
@@ -100,7 +100,8 @@ spec:
       - https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt
       - https://raw.githubusercontent.com/mhhakim/pihole-blocklist/master/porn.txt
 
-    whitelist: {}
+    whitelist:
+      - clients4.google.com
 
     blacklist: {}
     doh:
