@@ -24,7 +24,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -478,6 +477,18 @@
           "legendFormat": "Time Remaining",
           "range": true,
           "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PBFA97CFB590B2093"
+          },
+          "editorMode": "builder",
+          "expr": "node_hwmon_temp_celsius{instance=\"10.10.20.208:9100\", sensor=\"temp0\"}",
+          "hide": false,
+          "legendFormat": "Pi temp",
+          "range": true,
+          "refId": "D"
         }
       ],
       "title": "Betty",
