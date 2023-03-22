@@ -25,3 +25,4 @@ resources:
   - albatrossflavour.yaml
   - bjw-s.yaml
   - descheduler.yaml
+  - puppet.yaml

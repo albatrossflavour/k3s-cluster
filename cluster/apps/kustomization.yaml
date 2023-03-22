@@ -9,5 +9,6 @@ resources:
   - networking
   - monitoring
   - media
+  - puppet
   # - minecraft
   # - system-upgrade
