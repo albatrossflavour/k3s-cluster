@@ -62,10 +62,10 @@ spec:
       supplementalGroups:
         - 100
     dnsPolicy: ClusterFirstWithHostNet
-    persistence:
-      config:
-        enabled: true
-        existingClaim: puppet-server-config
+    #    persistence:
+      #  config:
+        #  enabled: true
+        #existingClaim: puppet-server-config
     podAnnotations:
       backup.velero.io/backup-volumes: config
     resources:
