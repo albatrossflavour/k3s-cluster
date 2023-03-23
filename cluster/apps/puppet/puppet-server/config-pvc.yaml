@@ -4,10 +4,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: puppetserver-confd-claim
   namespace: puppet
-  labels:
-    app.kubernetes.io/name: &name puppet-server
-    app.kubernetes.io/instance: *name
-    policy.home.arpa/snapshot: "true"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -21,10 +17,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: puppetserver-ca-claim
   namespace: puppet
-  labels:
-    app.kubernetes.io/name: &name puppet-server
-    app.kubernetes.io/instance: *name
-    policy.home.arpa/snapshot: "true"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -38,10 +30,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: puppetserver-puppetdb-claim
   namespace: puppet
-  labels:
-    app.kubernetes.io/name: &name puppet-server
-    app.kubernetes.io/instance: *name
-    policy.home.arpa/snapshot: "true"
 spec:
   accessModes:
     - ReadWriteOnce
@@ -55,10 +43,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: puppetserver-puppet-claim
   namespace: puppet
-  labels:
-    app.kubernetes.io/name: &name puppet-server
-    app.kubernetes.io/instance: *name
-    policy.home.arpa/snapshot: "true"
 spec:
   accessModes:
     - ReadWriteOnce
