@@ -31,18 +31,17 @@ spec:
     env:
       TZ: "${TIMEZONE}"
       PYTHONUSERBASE: /config/deps
-#   envFrom:
-#     - secretRef:
-#         name: *app
+      ENABLE_AVAHI: "1"
     service:
       main:
-        enabled: true
-        type: LoadBalancer
-        loadBalancerIP: "${SVC_HOME_ASSISTANT_ADDR}"
-        externalTrafficPolicy: Local
+        # enabled: true
+        # type: LoadBalancer
+        # loadBalancerIP: "${SVC_HOME_ASSISTANT_ADDR}"
+        # externalTrafficPolicy: Local
         ports:
           http:
             port: 8123
+    hostNetwork: true
     ingress:
       main:
         enabled: true
