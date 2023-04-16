@@ -7,5 +7,5 @@ resources:
   - scrypted
   - home-assistant
   - mosquitto
-  - homebridge
+  # - homebridge
   # - owntracks
