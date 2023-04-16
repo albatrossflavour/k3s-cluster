@@ -23,6 +23,9 @@ spec:
       restricted_access: |-
         ${EMAIL_ADDRESS_1}
         ${EMAIL_ADDRESS_2}
+        ${EMAIL_ADDRESS_3}
+        ${EMAIL_ADDRESS_4}
+        ${EMAIL_ADDRESS_5}
     config:
       clientID: ${OAUTH2_PROXY_CLIENT_ID}
       clientSecret: ${OAUTH2_PROXY_CLIENT_SECRET}
