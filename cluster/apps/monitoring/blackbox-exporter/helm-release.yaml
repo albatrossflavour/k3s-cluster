@@ -118,6 +118,11 @@ spec:
         app: prometheus-operator
         release: prometheus
       rules:
+        - alert: BettyUnderTemp
+          expr: (kiln_target{instance="10.10.20.208:80"} - kiln_temp{instance="10.10.20.208:80"}) > 80
+          for: 10m
+          labels:
+            severity: critical
         - alert: BlackboxSslCertificateWillExpireSoon
           expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 3
           for: 15m
