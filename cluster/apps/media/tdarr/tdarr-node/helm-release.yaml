@@ -73,5 +73,5 @@ spec:
 #     limits:
 #       gpu.intel.com/i915: 1
     nodeSelector:
-      kubernetes.io/hostname: k8s-6
+      tdrr: true
       #intel.feature.node.kubernetes.io/gpu: "true"
