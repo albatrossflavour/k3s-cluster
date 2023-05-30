@@ -36,8 +36,8 @@ spec:
       serverIP: 0.0.0.0
       serverPort: "{{ .Values.service.main.ports.server.port }}"
       ffmpegPath: ""
-      PUID: "${SECURITY_CONTEXT_RUN_AS_USER}"
-      PGID: "${SECURITY_CONTEXT_RUN_AS_GROUP}"
+      PUID: 1001
+      PGID: 1001
     service:
       main:
         ports:
@@ -103,9 +103,9 @@ spec:
           - name: ffmpegPath
             value: ""
           - name: PUID
-            value: "${SECURITY_CONTEXT_RUN_AS_USER}"
+            value: 1001
           - name: PGID
-            value: "${SECURITY_CONTEXT_RUN_AS_GROUP}"
+            value: 1001
         volumeMounts:
           - name: config
             mountPath: /app/configs
