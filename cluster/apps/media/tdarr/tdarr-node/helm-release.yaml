@@ -70,5 +70,4 @@ spec:
         cpu: 10m
         memory: 250Mi
     nodeSelector:
-      tdarr: "true"
-      #intel.feature.node.kubernetes.io/gpu: "true"
+      intel.feature.node.kubernetes.io/gpu: "true"
