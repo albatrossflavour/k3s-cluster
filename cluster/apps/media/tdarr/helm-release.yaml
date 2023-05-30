@@ -87,3 +87,33 @@ spec:
           - hosts:
               - *host
             secretName: *app
+    additionalContainers:
+      node:
+        name: node
+        image: docker.io/haveagitgat/tdarr_node:latest
+        env:
+          - name: TZ
+            value: "${TIMEZONE}"
+          - name: nodeID
+            value: node
+          - name: serverIP
+            value: localhost
+          - name: serverPort
+            value: "{{ .Values.service.main.ports.server.port }}"
+          - name: ffmpegPath
+            value: ""
+          - name: PUID
+            value: "${SECURITY_CONTEXT_RUN_AS_USER}"
+          - name: PGID
+            value: "${SECURITY_CONTEXT_RUN_AS_GROUP}"
+        volumeMounts:
+          - name: config
+            mountPath: /app/configs
+          - name: media
+            enabled: true
+            type: nfs
+            server: "192.168.1.22"
+            path: /volume1/Media
+            mountPath: /media
+          - name: shared
+            mountPath: /shared
