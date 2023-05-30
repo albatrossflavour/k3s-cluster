@@ -79,7 +79,7 @@ spec:
           hajimari.io/icon: material-symbols:switch-video-outline
           hajimari.io/group: "Media"
         hosts:
-          - host: *host
+          - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
