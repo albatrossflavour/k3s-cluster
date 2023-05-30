@@ -47,13 +47,6 @@ spec:
             enabled: true
             protocol: TCP
             port: 8266
-    podSecurityContext:
-      runAsUser: 0
-      runAsGroup: 0
-      fsGroup: 0
-      capabilities:
-        add:
-          - CHOWN
     persistence:
       config:
         enabled: true

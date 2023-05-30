@@ -65,17 +65,6 @@ spec:
         server: "192.168.1.22"
         path: /volume1/Media/cache
         mountPath: /cache
-    podSecurityContext:
-      runAsUser: 0
-      runAsGroup: 0
-      fsGroup: 0
-      capabilities:
-        add:
-          - CHOWN
-      supplementalGroups:
-        - 44
-        - 226
-        - 1010
     resources:
       requests:
         cpu: 10m
