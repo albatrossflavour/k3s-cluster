@@ -9,7 +9,6 @@ spec:
   chart:
     spec:
       chart: kube-prometheus-stack
-      # version: 41.7.4
       version: 46.8.0
       sourceRef:
         kind: HelmRepository
