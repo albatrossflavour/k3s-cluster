@@ -242,6 +242,7 @@ spec:
             memory: 3000Mi
           limits:
             memory: 7000Mi
+        scrapeConfigSelector: {}
         additionalScrapeConfigs:
           - job_name: kilns
             scrape_interval: 1m
