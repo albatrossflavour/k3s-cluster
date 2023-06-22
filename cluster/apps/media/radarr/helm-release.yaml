@@ -98,7 +98,7 @@ spec:
         name: radarr-pushover
         subPath: notify.sh
         mountPath: /scripts/pushover-notify.sh
-        defaultMode: 0775
+        defaultMode: '0775'
         readOnly: true
     podAnnotations:
       configmap.reloader.stakater.com/reload: radarr-pushover

@@ -74,7 +74,7 @@ spec:
             path: /volume2/Backups
         - name: direct-mount-backup-script
           projected:
-            defaultMode: 0775
+            defaultMode: '0775'
             sources:
               - configMap:
                   name: direct-mount-backup-script
