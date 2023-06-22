@@ -33,7 +33,7 @@ spec:
 
     image:
       repository: ghcr.io/haveagitgat/tdarr_node_acc
-      tag: latest
+      tag: 2.00.21
     env:
       TZ: "${TZ}"
       PUID: "1000"
