@@ -67,7 +67,7 @@ spec:
         mountPath: /cache
     resources:
       requests:
-        cpu: 10m
+        cpu: 14m
         memory: 500Mi
       limits:
         gpu.intel.com/i915: "1"
