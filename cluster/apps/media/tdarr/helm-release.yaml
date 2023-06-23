@@ -51,6 +51,11 @@ spec:
       config:
         enabled: true
         existingClaim: tdarr-config
+        subPath:
+          - path: tdarr/config
+            mountPath: /app/configs
+          - path: tdarr/data
+            mountPath: /app/server
       cache:
         enabled: true
         type: nfs
