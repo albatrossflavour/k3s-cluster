@@ -80,7 +80,8 @@ spec:
           hajimari.io/icon: material-symbols:switch-video-outline
           hajimari.io/group: "Media"
         hosts:
-          - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
+          # - host: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.lab.albatrossflavour.com"
             paths:
               - path: /
                 pathType: Prefix
