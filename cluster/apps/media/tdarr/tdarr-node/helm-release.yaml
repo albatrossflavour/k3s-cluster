@@ -33,7 +33,7 @@ spec:
 
     image:
       repository: ghcr.io/haveagitgat/tdarr_node_acc
-      tag: 2.00.20.1
+      tag: 2.00.21
     env:
       TZ: "${TZ}"
       PUID: "1000"
@@ -67,7 +67,7 @@ spec:
         mountPath: /cache
     resources:
       requests:
-        cpu: 10m
+        cpu: 14m
         memory: 500Mi
       limits:
         gpu.intel.com/i915: "1"
