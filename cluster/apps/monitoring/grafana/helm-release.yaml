@@ -89,9 +89,13 @@ spec:
           url: https://raw.githubusercontent.com/albatrossflavour/k3s-cluster/master/cluster/apps/monitoring/grafana/dashboards/nodes.json
           datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/7845
-        speedtest-exporter:
+        speedtest:
+          gnetId: 13665
+          revision: 1
           datasource: Prometheus
+        speedtest-exporter:
           url: https://raw.githubusercontent.com/MiguelNdeCarvalho/speedtest-exporter/main/Dashboard/Speedtest-Exporter.json
+          datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/7845
         unifi-client-insights:
           gnetId: 11315
