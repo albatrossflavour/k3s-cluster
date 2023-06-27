@@ -26,3 +26,4 @@ resources:
   - bjw-s.yaml
   - descheduler.yaml
   - puppet.yaml
+  - dysnix.yaml
