@@ -79,10 +79,6 @@ spec:
               matchers:
                 - severity = "critical"
               continue: true
-            - receiver: "nodered"
-              matchers:
-                - alertname = "UPSOnBattery"
-              continue: true
         inhibit_rules:
           - source_matchers:
               - severity = "critical"
