@@ -26,22 +26,22 @@ spec:
       repository: velero/velero
       tag: v1.11.0
     configuration:
-      - backupStorageLocation:
-        name: default
-        bucket: velero
-        provider: aws
-        default: true
-        config:
-          region: us-east-1
-          s3ForcePathStyle: true
-          s3Url: http://192.168.1.22:9000
-          publicUrl: http://192.168.1.22:9000
-      - volumeSnapshotLocation:
-        name: aws
-        provider: aws
-        config:
-          region: us-east-1
-#     resticTimeout: 6h
+      backupStorageLocation:
+        - name: default
+          bucket: velero
+          provider: aws
+          default: true
+          config:
+            region: us-east-1
+            s3ForcePathStyle: true
+            s3Url: http://192.168.1.22:9000
+            publicUrl: http://192.168.1.22:9000
+      volumeSnapshotLocation:
+        - name: aws
+          provider: aws
+          config:
+            region: us-east-1
+      resticTimeout: 6h
     initContainers:
     - name: velero-plugin-for-aws
       image: velero/velero-plugin-for-aws:v1.7.0
