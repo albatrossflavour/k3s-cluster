@@ -40,7 +40,7 @@ spec:
         name: aws
         config:
           region: us-east-1
-      resticTimeout: 6h
+#     resticTimeout: 6h
     initContainers:
     - name: velero-plugin-for-aws
       image: velero/velero-plugin-for-aws:v1.7.0
