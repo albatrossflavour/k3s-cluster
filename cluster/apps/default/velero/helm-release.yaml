@@ -26,20 +26,21 @@ spec:
       repository: velero/velero
       tag: v1.11.0
     configuration:
-      provider: aws
       backupStorageLocation:
-        name: default
-        bucket: velero
-        default: true
-        config:
-          region: us-east-1
-          s3ForcePathStyle: true
-          s3Url: http://192.168.1.22:9000
-          publicUrl: http://192.168.1.22:9000
-      volumeSnapshotLocation:
-        name: aws
-        config:
-          region: us-east-1
+        - name: default
+          provider: aws
+          bucket: velero
+          default: true
+          config:
+            region: us-east-1
+            s3ForcePathStyle: true
+            s3Url: http://192.168.1.22:9000
+            publicUrl: http://192.168.1.22:9000
+        - volumeSnapshotLocation:
+          name: aws
+          provider: aws
+          config:
+            region: us-east-1
       resticTimeout: 6h
     initContainers:
     - name: velero-plugin-for-aws
@@ -64,9 +65,9 @@ spec:
         enabled: true
     backupsEnabled: true
     snapshotsEnabled: true
-    deployRestic: true
+    deployNodeAgent: true
     upgradeCRDs: true
-    restic:
+    nodeAgent:
       podVolumePath: /var/lib/kubelet/pods
       privileged: false
       tolerations:
