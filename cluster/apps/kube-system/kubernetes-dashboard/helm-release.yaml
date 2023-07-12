@@ -46,3 +46,7 @@ spec:
       - --token-ttl=129670000
     metricsScraper:
       enabled: true
+    cert-manager:
+      enabled: false
+    nginx:
+      enabled: false
