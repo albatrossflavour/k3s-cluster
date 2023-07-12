@@ -9,5 +9,5 @@ resources:
   - reflector
   - reloader
   - kube-vip
-  - kubernetes-dashboard
+  # - kubernetes-dashboard
   - descheduler
