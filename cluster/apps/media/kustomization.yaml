@@ -6,6 +6,7 @@ resources:
   - scripts
   - radarr
   - sonarr
+  - bazarr
   - sabnzbd
   - qbittorrent
   - tautulli
