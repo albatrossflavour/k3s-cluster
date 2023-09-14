@@ -65,12 +65,13 @@ spec:
       config:
         enabled: true
         existingClaim: kapowarr-config
+        mountPath: /app/db
       media:
         enabled: true
         type: nfs
         server: "192.168.1.22"
-        path: /volume1/Media
-        mountPath: /media
+        path: /volume1/Media/Comics
+        mountPath: /content
     resources:
       requests:
         cpu: 2m
