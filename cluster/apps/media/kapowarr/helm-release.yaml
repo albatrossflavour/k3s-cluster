@@ -30,7 +30,7 @@ spec:
       tag: v1.0.0-beta-1
     env:
       TZ: "${TIMEZONE}"
-      PUSHOVER_APP_URL: &host "{{ .Release.Name }}.lab.${SECRET_DOMAIN}"
+      PUSHOVER_APP_URL: &host "kapowarr.lab.${SECRET_DOMAIN}"
     service:
       main:
         ports:
