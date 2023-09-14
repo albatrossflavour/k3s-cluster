@@ -61,13 +61,6 @@ spec:
           - hosts:
               - *host
             secretName: *app
-    podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
-      fsGroupChangePolicy: "OnRootMismatch"
-      supplementalGroups:
-        - 100
     persistence:
       config:
         enabled: true
