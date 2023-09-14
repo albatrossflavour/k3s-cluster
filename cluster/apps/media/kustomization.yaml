@@ -13,4 +13,5 @@ resources:
   - jackett
   - flaresolverr
   - overseerr
+  - kapowarr
   # - tdarr
