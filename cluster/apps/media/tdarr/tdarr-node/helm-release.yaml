@@ -69,8 +69,8 @@ spec:
       requests:
         cpu: 14m
         memory: 500Mi
-      limits:
-        gpu.intel.com/i915: "1"
+        # limits:
+        # gpu.intel.com/i915: "1"
     nodeSelector:
       tdarr: "true"
       intel.feature.node.kubernetes.io/gpu: "true"
