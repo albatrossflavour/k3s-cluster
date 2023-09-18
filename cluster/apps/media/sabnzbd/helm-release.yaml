@@ -99,7 +99,8 @@ spec:
         mountPath: /media
       incomplete:
         enabled: true
-        type: emptyDir
+        existingClaim: sabnzbd-incomplete
+        retain: true
     resources:
       requests:
         cpu: 6m
