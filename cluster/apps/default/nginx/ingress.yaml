@@ -92,6 +92,7 @@ spec:
         - www.toodlepip.com.au
         - bandcamp.tv
         - www.bandcamp.tv
+        - puppet.lab.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:
