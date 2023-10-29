@@ -87,6 +87,8 @@ spec:
         - address=/mosquitto.lab.albatrossflavour.com/192.168.2.246
         - address=/betty.albatrossflavour.com/10.10.20.208
         - address=/conbee.lab.albatrossflavour.com/10.10.20.57
+        - address=/puppet.lab.albatrossflavour.com/192.168.2.82
+        - address=/cd4pe.lab.albatrossflavour.com/192.168.2.35
 
       additionalHostsEntries: []
       staticDhcpEntries: []
