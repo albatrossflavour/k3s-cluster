@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: nginx
-      version: 15.3.0
+      version: 15.3.1
       sourceRef:
         kind: HelmRepository
         name: bitnami
@@ -28,7 +28,7 @@ spec:
     image:
       registry: docker.io
       repository: bitnami/nginx
-      tag: 1.25.2-debian-11-r0
+      tag: 1.25.3-debian-11-r0
     pullPolicy: IfNotPresent
     debug: false
     replicaCount: 1

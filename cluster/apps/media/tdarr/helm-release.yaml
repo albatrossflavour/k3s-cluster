@@ -29,7 +29,7 @@ spec:
     image:
       # https://hub.docker.com/r/haveagitgat/tdarr_node
       repository: docker.io/haveagitgat/tdarr
-      tag: 2.12.01
+      tag: 2.13.01
     env:
       TZ: ${TIMEZONE}
       webUIPort: "{{ .Values.service.main.ports.http.port }}"
