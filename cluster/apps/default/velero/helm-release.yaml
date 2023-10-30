@@ -84,11 +84,11 @@ spec:
           cpu: null
     credentials:
       existingSecret: velero-helm-values
-    schedules:
-      daily-backup:
-        schedule: "0 4 * * *"
-        template:
-          ttl: "120h"
+#   schedules:
+#     daily-backup:
+#       schedule: "0 4 * * *"
+#       template:
+#         ttl: "120h"
 #     minecraft-hourly:
 #       schedule: "0 */6 * * *"
 #       template:
