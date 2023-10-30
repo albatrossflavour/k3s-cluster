@@ -37,7 +37,7 @@ spec:
             s3Url: http://192.168.1.22:9000
             publicUrl: http://192.168.1.22:9000
       volumeSnapshotLocation:
-        - name: aws
+        - name: synology-aws
           provider: aws
           config:
             region: us-east-1
