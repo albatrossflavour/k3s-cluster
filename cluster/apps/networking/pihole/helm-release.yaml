@@ -90,10 +90,10 @@ spec:
         - address=/puppet.lab.albatrossflavour.com/192.168.2.82
         - address=/cd4pe.lab.albatrossflavour.com/192.168.2.35
         - address=/pam.lab.albatrossflavour.com/192.168.2.89
-        - address=/comply.lab.albatrossflavour.com/192.168.2.89
         - address=/vcenter.lab.albatrossflavour.com/192.168.2.11
         - address=/esx1.lab.albatrossflavour.com/192.168.2.10
 
+#- address=/comply.lab.albatrossflavour.com/192.168.2.89
       additionalHostsEntries: []
       staticDhcpEntries: []
       customSettings: []
