@@ -27,7 +27,7 @@ spec:
       tag: v1.12.1
     configuration:
       backupStorageLocation:
-        - name: default
+        - name: synology
           bucket: velero
           provider: aws
           default: true
