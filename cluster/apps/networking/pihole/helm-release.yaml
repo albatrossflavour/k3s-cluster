@@ -89,6 +89,8 @@ spec:
         - address=/conbee.lab.albatrossflavour.com/10.10.20.57
         - address=/puppet.lab.albatrossflavour.com/192.168.2.82
         - address=/cd4pe.lab.albatrossflavour.com/192.168.2.35
+        - address=/pam.lab.albatrossflavour.com/192.168.2.89
+        - address=/comply.lab.albatrossflavour.com/192.168.2.89
 
       additionalHostsEntries: []
       staticDhcpEntries: []
