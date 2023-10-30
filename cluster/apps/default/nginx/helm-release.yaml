@@ -69,6 +69,21 @@ spec:
         }
       }
 
+      server {
+        listen 8080;
+        server_name cd4pe.lab.albatrossflavour.com;
+        location / {
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_set_header Host $host;
+
+          proxy_pass https://192.168.2.35;
+
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+        }
+      }
+
 #   extraVolumes:
 #     - name: nginx-docs
 #       persistentVolumeClaim:
@@ -126,6 +141,14 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+          - host: puppet.lab.albatrossflavour.com
+            paths:
+              - path: /
+                pathType: Prefix
+          - host: cd4pe.lab.albatrossflavour.com
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - kalooma.org
@@ -134,6 +157,8 @@ spec:
               - www.toodlepip.com.au
               - bandcamp.tv
               - www.bandcamp.tv
+              - puppet.lab.albatrossflavour.com
+              - cd4pe.lab.albatrossflavour.com
             secretName: nginx
 
     persistence:
