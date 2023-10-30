@@ -91,6 +91,8 @@ spec:
         - address=/cd4pe.lab.albatrossflavour.com/192.168.2.35
         - address=/pam.lab.albatrossflavour.com/192.168.2.89
         - address=/comply.lab.albatrossflavour.com/192.168.2.89
+        - address=/esx-1.lab.albatrossflavour.com/192.168.2.10
+        - address=/vcenter.lab.albatrossflavour.com/192.168.2.11
 
       additionalHostsEntries: []
       staticDhcpEntries: []
