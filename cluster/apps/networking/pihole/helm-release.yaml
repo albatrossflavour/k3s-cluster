@@ -90,6 +90,7 @@ spec:
         - address=/esxi1.vm.albatrossflavour.com/192.168.4.10
         - address=/esxi2.vm.albatrossflavour.com/192.168.4.20
         - address=/esxi3.vm.albatrossflavour.com/192.168.4.30
+        - address=/esxi4.vm.albatrossflavour.com/192.168.4.40
         - address=/vcenter.vm.albatrossflavour.com/192.168.4.100
         - address=/puppet.vm.albatrossflavour.com/192.168.4.200
         - address=/cd4pe.vm.albatrossflavour.com/192.168.4.201
