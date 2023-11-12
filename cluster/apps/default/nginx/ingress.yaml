@@ -94,6 +94,16 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
+    - host: comply.vm.albatrossflavour.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
   tls:
     - hosts:
         - kalooma.org
@@ -104,6 +114,7 @@ spec:
         - www.bandcamp.tv
         - puppet.lab.albatrossflavour.com
         - cd4pe.lab.albatrossflavour.com
+        - comply.lab.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:
