@@ -112,9 +112,9 @@ spec:
         - www.toodlepip.com.au
         - bandcamp.tv
         - www.bandcamp.tv
-        - puppet.lab.albatrossflavour.com
-        - cd4pe.lab.albatrossflavour.com
-        - comply.lab.albatrossflavour.com
+        - puppet.vm.albatrossflavour.com
+        - cd4pe.vm.albatrossflavour.com
+        - comply.vm.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:
