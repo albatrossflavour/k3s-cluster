@@ -31,6 +31,8 @@ spec:
       nameOverride: *app
     env:
       TZ: "${TIMEZONE}"
+      PUID: "568"
+      PGID: "568"
     service:
       main:
         ports:
