@@ -25,7 +25,8 @@ spec:
   values:
     fullnameOverride: blackbox-exporter
     image:
-      repository: quay.io/prometheus/blackbox-exporter
+      #repository: quay.io/prometheus/blackbox-exporter
+      repository: prometheus/blackbox-exporter
     ingress:
       enabled: true
       className: nginx
