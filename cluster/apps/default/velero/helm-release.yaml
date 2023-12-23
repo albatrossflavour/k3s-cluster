@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: velero/velero
-      tag: v1.12.1
+      tag: v1.12.2
     configuration:
       backupStorageLocation:
         - name: synology
