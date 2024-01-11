@@ -119,6 +119,11 @@ spec:
         app: prometheus-operator
         release: prometheus
       rules:
+        - alert: UPSStatus
+          expr: network_ups_tools_ups_status{flag="OL", instance="192.168.2.50:9199", job="nut-primary", ups="ups"} == 0
+          for: 2m
+          labels:
+            severity: critical
         - alert: BettyUnderTemp
           expr: (kiln_target{instance="10.10.20.208:80"} - kiln_temp{instance="10.10.20.208:80"}) > 80
           for: 10m
