@@ -273,6 +273,14 @@ spec:
             static_configs:
               - targets:
                   - "zigbee2mqtt-exporter"
+          - job_name: nut-primary
+            metrics_path: /ups_metrics
+            static_configs:
+              - targets: ['192.168.2.50:9199']
+                labels:
+                  ups: "ups"
+            params:
+              ups: ["ups"]
 #         - job_name: frr-exporter
 #           scrape_interval: 1m
 #           scrape_timeout: 10s
