@@ -88,6 +88,9 @@ spec:
         nodes:
           url: https://raw.githubusercontent.com/albatrossflavour/k3s-cluster/master/cluster/apps/monitoring/grafana/dashboards/nodes.json
           datasource: Prometheus
+        ups:
+          url: https://github.com/DRuggeri/nut_exporter/blob/master/dashboard/dashboard.json
+          datasource: Prometheus
         # Ref: https://grafana.com/grafana/dashboards/13665
         speedtest:
           gnetId: 13665
