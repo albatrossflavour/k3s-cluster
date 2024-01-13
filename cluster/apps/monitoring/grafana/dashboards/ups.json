@@ -653,7 +653,7 @@
       "fieldConfig": {
         "defaults": {
           "mappings": [],
-          "max": 140,
+          "max": 250,
           "min": 90,
           "thresholds": {
             "mode": "absolute",
@@ -664,15 +664,15 @@
               },
               {
                 "color": "dark-green",
-                "value": 95
+                "value": 200
               },
               {
                 "color": "dark-yellow",
-                "value": 125
+                "value": 230
               },
               {
                 "color": "dark-red",
-                "value": 135
+                "value": 240
               }
             ]
           }
@@ -793,7 +793,7 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": "140",
+          "max": "250",
           "min": "90",
           "show": true
         },
