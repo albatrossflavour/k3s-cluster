@@ -74,7 +74,7 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
-    - host: puppet.vm.albatrossflavour.com
+    - host: puppet.lab.albatrossflavour.com
       http:
         paths:
           - backend:
@@ -84,7 +84,7 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
-    - host: cd4pe.vm.albatrossflavour.com
+    - host: cd4pe.lab.albatrossflavour.com
       http:
         paths:
           - backend:
@@ -94,7 +94,7 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
-    - host: comply.vm.albatrossflavour.com
+    - host: comply.lab.albatrossflavour.com
       http:
         paths:
           - backend:
@@ -112,9 +112,9 @@ spec:
         - www.toodlepip.com.au
         - bandcamp.tv
         - www.bandcamp.tv
-        - puppet.vm.albatrossflavour.com
-        - cd4pe.vm.albatrossflavour.com
-        - comply.vm.albatrossflavour.com
+        - puppet.lab.albatrossflavour.com
+        - cd4pe.lab.albatrossflavour.com
+        - comply.lab.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:

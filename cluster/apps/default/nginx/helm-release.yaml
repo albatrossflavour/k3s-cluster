@@ -56,12 +56,12 @@ spec:
 
       server {
         listen 8080;
-        server_name puppet.vm.albatrossflavour.com;
+        server_name puppet.lab.albatrossflavour.com;
         location / {
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
           proxy_set_header Host $host;
 
-          proxy_pass https://192.168.4.200;
+          proxy_pass https://192.168.2.200;
 
           proxy_http_version 1.1;
           proxy_set_header Upgrade $http_upgrade;
@@ -71,12 +71,12 @@ spec:
 
       server {
         listen 8080;
-        server_name cd4pe.vm.albatrossflavour.com;
+        server_name cd4pe.lab.albatrossflavour.com;
         location / {
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
           proxy_set_header Host $host;
 
-          proxy_pass https://192.168.4.201;
+          proxy_pass https://192.168.2.201;
 
           proxy_http_version 1.1;
           proxy_set_header Upgrade $http_upgrade;
@@ -87,12 +87,12 @@ spec:
 
       server {
         listen 8080;
-        server_name comply.vm.albatrossflavour.com;
+        server_name comply.lab.albatrossflavour.com;
         location / {
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
           proxy_set_header Host $host;
 
-          proxy_pass https://192.168.4.202;
+          proxy_pass https://192.168.2.202;
 
           proxy_http_version 1.1;
           proxy_set_header Upgrade $http_upgrade;
@@ -157,15 +157,15 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-          - host: puppet.vm.albatrossflavour.com
+          - host: puppet.lab.albatrossflavour.com
             paths:
               - path: /
                 pathType: Prefix
-          - host: cd4pe.vm.albatrossflavour.com
+          - host: cd4pe.lab.albatrossflavour.com
             paths:
               - path: /
                 pathType: Prefix
-          - host: comply.vm.albatrossflavour.com
+          - host: comply.lab.albatrossflavour.com
             paths:
               - path: /
                 pathType: Prefix
@@ -177,9 +177,9 @@ spec:
               - www.toodlepip.com.au
               - bandcamp.tv
               - www.bandcamp.tv
-              - puppet.vm.albatrossflavour.com
-              - cd4pe.vm.albatrossflavour.com
-              - comply.vm.albatrossflavour.com
+              - puppet.lab.albatrossflavour.com
+              - cd4pe.lab.albatrossflavour.com
+              - comply.lab.albatrossflavour.com
             secretName: nginx
 
     persistence:
