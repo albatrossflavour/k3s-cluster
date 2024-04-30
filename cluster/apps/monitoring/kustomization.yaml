@@ -5,9 +5,9 @@ namespace: monitoring
 resources:
   - namespace.yaml
   - blackbox-exporter
-  - grafana
-  - kube-prometheus-stack
-  - unifi-poller
-  - thanos
-  - speedtest-exporter
+  #- grafana
+  #  - kube-prometheus-stack
+  #- unifi-poller
+  #- thanos
+  #- speedtest-exporter
   - mqtt-exporter
