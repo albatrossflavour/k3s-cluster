@@ -87,10 +87,10 @@ spec:
         - address=/mosquitto.lab.albatrossflavour.com/192.168.2.246
         - address=/betty.albatrossflavour.com/10.10.20.208
         - address=/conbee.lab.albatrossflavour.com/10.10.20.57
-        - address=/puppet.lab.albatrossflavour.com/192.168.2.200
-        - address=/cd4pe.lab.albatrossflavour.com/192.168.2.201
-        - address=/comply.lab.albatrossflavour.com/192.168.2.202
-        - address=/pam.lab.albatrossflavour.com/192.168.2.202
+        - address=/puppet.lab.albatrossflavour.com/192.168.5.10
+        - address=/cd4pe.lab.albatrossflavour.com/192.168.5.11
+        - address=/scm.lab.albatrossflavour.com/192.168.5.12
+        - address=/dashboard.lab.albatrossflavour.com/192.168.5.13
 
 #- address=/comply.lab.albatrossflavour.com/192.168.2.89
       additionalHostsEntries: []
