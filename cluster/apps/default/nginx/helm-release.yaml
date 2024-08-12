@@ -165,7 +165,7 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-          - host: comply.lab.albatrossflavour.com
+          - host: scm.lab.albatrossflavour.com
             paths:
               - path: /
                 pathType: Prefix
@@ -179,7 +179,7 @@ spec:
               - www.bandcamp.tv
               - puppet.lab.albatrossflavour.com
               - cd4pe.lab.albatrossflavour.com
-              - comply.lab.albatrossflavour.com
+              - scm.lab.albatrossflavour.com
             secretName: nginx
 
     persistence:
