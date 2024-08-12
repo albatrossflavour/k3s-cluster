@@ -94,7 +94,7 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
-    - host: comply.lab.albatrossflavour.com
+    - host: scm.lab.albatrossflavour.com
       http:
         paths:
           - backend:
@@ -114,7 +114,7 @@ spec:
         - www.bandcamp.tv
         - puppet.lab.albatrossflavour.com
         - cd4pe.lab.albatrossflavour.com
-        - comply.lab.albatrossflavour.com
+        - scm.lab.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:
