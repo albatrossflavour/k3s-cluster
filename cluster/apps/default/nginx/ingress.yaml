@@ -104,6 +104,16 @@ spec:
                   number: 8080
             path: /
             pathType: Prefix
+    - host: dashboard.lab.albatrossflavour.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: nginx
+                port:
+                  number: 8080
+            path: /
+            pathType: Prefix
   tls:
     - hosts:
         - kalooma.org
@@ -115,6 +125,7 @@ spec:
         - puppet.lab.albatrossflavour.com
         - cd4pe.lab.albatrossflavour.com
         - scm.lab.albatrossflavour.com
+        - dashboard.lab.albatrossflavour.com
       secretName: nginx
 status:
   loadBalancer:
